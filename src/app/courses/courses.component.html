@@ -1,58 +1,14 @@
 <h3 >Courses</h3>
 <div class="align-center">
-<!-- <button (click)="addStudent()" class="add-button">Add Student</button> -->
-    <!-- <button (click)="addStudent()" type="button" class="btn btn-default add-button" aria-label="Left Align">
-      Add Student
-    </button>
-    <button (click)="saveStudent()" type="button" class="btn btn-default add-button" aria-label="Left Align">
-      Save
-    </button> -->
-    <button (click)="addStudent()" mat-flat-button color="accent" class="add-button">Add Student</button>
-    <button (click)="saveStudent()" mat-flat-button color="accent" class="add-button">Save</button>
-    <table class="table-one">
-      <thead>
-        <tr>
-          <td>ID</td>
-          <td>First Name</td>
-          <td>Last Name</td>
-          <td>Courses</td>
-          <td></td>
-        </tr>
-      </thead>
-      <tbody *ngIf="editMode == false">
-        <tr *ngFor="let student of student; let i= index">
-          <td>{{student.id}}</td>
-          <td>{{student.firstName}}</td>
-          <td>{{student.lastName}}</td>
-          <td>{{student.course}}</td>
-          <td>
-            <button (click)="removeStudent(i)" mat-flat-button color="warn" class="add-button align-right">
-              <mat-icon>delete</mat-icon>
-            </button>
-             
-          </td>
-        </tr>
-      </tbody>
-      <tbody *ngIf="editMode == true">
-          <tr *ngFor="let student of student; let i= index" [ngClass]="{'new-form' : student.id == null}">
-            <td>
-                <input [(ngModel)]="student.id" type="text" class="form-control" placeholder="ID" aria-describedby="basic-addon2">
-            </td>
-            <td>
-                <input [(ngModel)]="student.firstName" type="text" class="form-control" placeholder="First Name" aria-describedby="basic-addon2">
-            </td>
-            <td>
-                <input [(ngModel)]="student.lastName" type="text" class="form-control" placeholder="Last Name" aria-describedby="basic-addon2">
-            </td>
-            <td>
-                <input [(ngModel)]="student.course" type="text" class="form-control" placeholder="Course" aria-describedby="basic-addon2">
-            </td>
-            <td>
-                <button (click)="removeStudent(i)" mat-flat-button color="warn" class="add-button align-right">
-                    <mat-icon>delete</mat-icon>
-                  </button>
-            </td>
-          </tr>
-        </tbody>
-    </table>
+  <form class="example-form">
+
+    <mat-form-field class="example-full-width">
+      <input matInput #message maxlength="256" placeholder="Message">
+      <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+    </mat-form-field>
+    
+  </form>
+  <!-- <button (click)="addStudent()" mat-flat-button color="accent" class="add-button">Add Student</button>
+    <button (click)="saveStudent()" mat-flat-button color="accent" class="add-button">Save</button> -->
+    
   </div>
