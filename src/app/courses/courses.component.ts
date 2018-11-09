@@ -7,10 +7,11 @@ interface IStudent {
   course: string;
 }
 @Component({
-  selector: 'app-courses',
+  selector: 'courses',
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.css']
 })
+
 
 export class CoursesComponent implements OnInit {
 
@@ -46,27 +47,7 @@ export class CoursesComponent implements OnInit {
 
   ngOnInit() {
   }
+ 
 
-  addStudent() {
-    this.editMode = true;
-    const student: IStudent = {
-      id: null,
-      firstName: null,
-      lastName: null,
-      course: null
-    };
-    // this.student.push(student);
-    this.student.unshift(student);
-  }
-
-  removeStudent(index: number) {
-    console.log(`from removeStudent function index:, ${index}`);
-    this.student.splice(index, 1);
-
-  }
-
-  saveStudent() {
-    this.editMode = false;
-  }
 
 }

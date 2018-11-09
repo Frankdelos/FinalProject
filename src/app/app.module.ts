@@ -15,7 +15,7 @@ import{MaterialDesignModule} from '../material-design/material-design.module';
 //routing material
 import {AppRoutes} from './app.routes';
 import { HomeComponent } from './home/home.component';
-import { CoursesComponent } from './courses/courses.component';
+import { CoursesComponent,  } from './courses/courses.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +36,6 @@ import { CoursesComponent } from './courses/courses.component';
     AppRoutes
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
