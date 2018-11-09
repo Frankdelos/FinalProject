@@ -16,6 +16,7 @@ import{MaterialDesignModule} from '../material-design/material-design.module';
 import {AppRoutes} from './app.routes';
 import { HomeComponent } from './home/home.component';
 import { CoursesComponent } from './courses/courses.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { CoursesComponent } from './courses/courses.component';
     MainContentComponent,
     MainFooterComponent,
     HomeComponent,
-    CoursesComponent
+    CoursesComponent,
+
   ],
   imports: [
     BrowserModule,

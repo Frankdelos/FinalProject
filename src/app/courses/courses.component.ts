@@ -11,10 +11,7 @@ interface IStudent {
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.css']
 })
-export class InputHintExample{ 
-values= '';
 
-}
 export class CoursesComponent implements OnInit {
 
   student: Array<IStudent> = [];
