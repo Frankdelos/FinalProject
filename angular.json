@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "BillSplitter": {
+    "LabAssignment3": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/BillSplitter",
+            "outputPath": "dist/LabAssignment3",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -51,18 +51,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "BillSplitter:build"
+            "browserTarget": "LabAssignment3:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "BillSplitter:build:production"
+              "browserTarget": "LabAssignment3:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "BillSplitter:build"
+            "browserTarget": "LabAssignment3:build"
           }
         },
         "test": {
@@ -96,7 +96,7 @@
         }
       }
     },
-    "BillSplitter-e2e": {
+    "LabAssignment3-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -104,11 +104,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "BillSplitter:serve"
+            "devServerTarget": "LabAssignment3:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "BillSplitter:serve:production"
+              "devServerTarget": "LabAssignment3:serve:production"
             }
           }
         },
@@ -124,5 +124,5 @@
       }
     }
   },
-  "defaultProject": "BillSplitter"
+  "defaultProject": "LabAssignment3"
 }
