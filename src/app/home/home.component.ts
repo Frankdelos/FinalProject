@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 interface IDecisionProps {
   condX: boolean;
   condY: boolean;

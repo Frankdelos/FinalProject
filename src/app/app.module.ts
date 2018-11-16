@@ -10,6 +10,7 @@ import { MainFooterComponent } from './main-footer/main-footer.component';
 //angular material
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import{MaterialDesignModule} from '../material-design/material-design.module';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 //routing material
@@ -25,7 +26,7 @@ import { CoursesComponent,  } from './courses/courses.component';
     MainFooterComponent,
     HomeComponent,
     CoursesComponent,
-
+    
   ],
   imports: [
     BrowserModule,
@@ -33,7 +34,8 @@ import { CoursesComponent,  } from './courses/courses.component';
     FormsModule,
     BrowserAnimationsModule,
     MaterialDesignModule,
-    AppRoutes
+    AppRoutes,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent],
