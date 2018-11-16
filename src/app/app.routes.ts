@@ -1,7 +1,7 @@
 import {Routes, RouterModule} from '@angular/router';
 import {MainContentComponent} from './main-content/main-content.component';
 import { HomeComponent } from './home/home.component';
-import {CoursesComponent} from './courses/courses.component'
+import { PartyInputComponent } from './party-input/party-input.component'
 
 const routes: Routes = [
     {
@@ -9,8 +9,8 @@ const routes: Routes = [
         component: HomeComponent,
     },
     {
-        path: 'courses',
-        component: CoursesComponent,
+        path: 'party-input',
+        component: PartyInputComponent,
     },
     {
         path: '**',

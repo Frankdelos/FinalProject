@@ -8,11 +8,8 @@ import { Router } from '@angular/router'
 })
 export class MainHeaderComponent implements OnInit {
 
-  private firstName: string;
-  private lastName: string;
+
   constructor(private router: Router) {
-    this.firstName = 'Franklin';
-    this.lastName = 'Delos Santos';
   }
 
   goToPage(path: string) {
@@ -20,17 +17,6 @@ export class MainHeaderComponent implements OnInit {
     this.router.navigate([path]);
   }
   
-  showGreeting() {
-
-    const banner= document.getElementById('banner');
-    banner.innerHTML='Hello '+ this.firstName + ' '+ this.lastName + '.';
-  }
-
-  hideGreeting(){
-    const banner= document.getElementById('banner');
-    banner.innerHTML='r1c2';
-  
-  }
 
   ngOnInit() {
   }

@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-interface IStudent {
-  id: number;
-  firstName: string;
-  lastName: string;
-  course: string;
-}
+
 
 @Component({
   selector: 'main-content',
