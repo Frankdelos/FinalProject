@@ -16,8 +16,8 @@ import {MatRadioModule} from '@angular/material/radio';
 //routing material
 import {AppRoutes} from './app.routes';
 import { HomeComponent } from './home/home.component';
-import { CoursesComponent,  } from './courses/courses.component';
 import { PartyInputComponent } from './party-input/party-input.component';
+import { BillTotalComponent } from './bill-total/bill-total.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +26,8 @@ import { PartyInputComponent } from './party-input/party-input.component';
     MainContentComponent,
     MainFooterComponent,
     HomeComponent,
-    CoursesComponent,
     PartyInputComponent,
+    BillTotalComponent,
     
   ],
   imports: [

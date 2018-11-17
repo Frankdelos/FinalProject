@@ -5,11 +5,11 @@
     padding: 0px;
   }
   
-  body {
+  /* body {
     width: 100vw;
     height: 100vh;
     background-color: #a9c7f8af;
-  }
+  } */
 
   .align-center{
     margin: 15px;
@@ -19,18 +19,6 @@
   .nav-button{
     margin-right: 8px !important;
   }
-  .table{
-    width: 100%;
-    border: 1px solid #1b77da;
-}
-
-.table > tbody > tr > td, .table > thead > tr > td {
-    border: 1px solid #1b77da;
-    min-height: 50px;
-    padding: .5em;
-
-
-}
 
 h3 {
   margin-top: 20px;
@@ -40,4 +28,8 @@ h3 {
 table{
   table-layout: fixed;
    
+}
+
+.button-format{
+margin: 15px;
 }

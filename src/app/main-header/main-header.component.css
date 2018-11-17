@@ -7,3 +7,23 @@
   .nav-button{
     margin-right: 8px;
   }
+  .column {
+    flex: 50%;
+    width: 50%;
+    padding:20px;
+    height: 100vh; 
+
+  }
+
+.row {
+    display: flex;
+
+    
+}
+
+
+
+.center-text {
+text-align: center;
+
+}
