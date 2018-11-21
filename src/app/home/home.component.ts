@@ -11,6 +11,10 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router) { }
 
+  goToPage(path: string) {
+    console.log('from goToPage path: ',path);
+    this.router.navigate([path]);
+  }
   ngOnInit() {
   
   }
