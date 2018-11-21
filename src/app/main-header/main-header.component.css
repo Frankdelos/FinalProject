@@ -1,9 +1,7 @@
-.main-header, .main-footer {
-    /* background-color: #e75b51; */
-    display: grid;
-    grid-template-columns: 2fr 6fr 2fr;
-    height: 100%;
-  }
+.main-content{
+  display: grid;
+  grid-template-columns: 3fr 3fr;
+}
   .nav-button{
     margin-right: 8px;
   }
