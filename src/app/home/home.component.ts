@@ -9,7 +9,14 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+  }
+
+  goToPage(path: string) {
+    console.log('from goToPage path: ',path);
+    this.router.navigate([path]);
+  }
+  
 
   ngOnInit() {
   
