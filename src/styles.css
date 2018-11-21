@@ -33,3 +33,8 @@ table{
 .button-format{
 margin: 15px;
 }
+
+.center-text {
+  text-align: center;
+  
+  }
