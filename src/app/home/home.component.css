@@ -74,3 +74,6 @@
     border-radius: 4px;
 }
 
+.box-size {
+    padding: 20px !important;
+}
