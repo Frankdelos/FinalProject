@@ -33,8 +33,24 @@ table{
 .button-format{
 margin: 15px;
 }
+.btn-format {
+  padding: 10px;
+  margin: 15px;
+  }
 
 .center-text {
   text-align: center;
   
+  }
+.box-size{
+    height: 100px;
+    padding: 10px;
+    border: 1px solid rgb(7, 7, 7);
+    box-sizing: border-box;
+    font-size: 28px;
+    text-align: center;
+  }
+  .text-grid {
+    text-align: center;
+    height: 25vh;
   }

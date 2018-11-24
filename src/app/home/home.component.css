@@ -84,9 +84,6 @@
     display: table;
     clear: both;
   }
-
-
-
   
   .column-left {
     background-color: #03A9F4;
@@ -110,3 +107,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
+.text-grid {
+    text-align: center;
+    height: 25vh;
+}
