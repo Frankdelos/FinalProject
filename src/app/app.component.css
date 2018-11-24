@@ -1,8 +1,22 @@
 .app-container-grid {
   display: grid;
-  /* grid-template-columns: 3fr 6fr 3fr; */
-  grid-template-rows: 1fr 4fr 1fr;
+  grid-template-columns: 3fr 6fr 3fr;
+  /* grid-template-rows: 1fr 4fr 1fr; */
   height: 100vh;
+}
+
+.column {
+  float: left;
+  width: 50vw;
+  padding: 10px;
+  height: 100vh;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* .main-header, 

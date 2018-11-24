@@ -1,3 +1,17 @@
-<br>Enter check amount
-<input type="text" class="form-control box-size" placeholder="Enter total meal cost" aria-describedby="basic-addon2">
-<button type="button" class="btn btn-success" (click)="goToPage('party-input')">Next</button>
+<div class="split-grid">
+    <div class="center-text column-left">
+        <h2>Process Description</h2>
+        <div class="text-grid">On to the next step, this one is pretty simple as well; chances are you looked immediately to the right and
+            skipped over the instructions, but if you're one of the few successful and bright individuals at Fresno State still reading, all you need to do is enter the total amount of
+            people in your group and click next.</div>
+    </div>
+
+    <div class="center-text column-right">
+        <h2>Step 2 of 4</h2>
+        <br>Enter the amount of people in your party
+        <div class="align-center">
+            <input type="text" class="form-control box-size" placeholder="Enter Amount of People In Group" aria-describedby="basic-addon2">
+            <button type="button" class="btn btn-success btn-format" (click)="goToPage('party-input')">Next Step</button>
+        </div>
+    </div>
+</div>

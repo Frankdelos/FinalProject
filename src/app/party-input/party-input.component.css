@@ -1,0 +1,23 @@
+
+
+.column-left {
+    background-color: #03A9F4;
+    color: white;
+    /* float: left; */
+    width: 50vw;
+    padding: 10px;
+    height: 100vh;
+  }
+      
+  .column-right {
+    color: white;
+    background-color: #dc3545;
+    /* float: right; */
+    width: 50vw;
+    padding: 10px;
+    height: 100vh;
+  }
+  .split-grid {
+   display: grid;
+   grid-template-columns: 1fr 3fr;
+  }

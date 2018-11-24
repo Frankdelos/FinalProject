@@ -1,33 +1,17 @@
-<h3 class="align-center">Welcome to Bill Splitter!</h3>
-<div>Don't you wish there was an app that automatically split a bill among you and your friends? </div>
-<div>Well now there is!</div>
-<h4>Let's start with the check total:
-    <br>Enter check amount
-    <input type="text" class="form-control box-size" placeholder="Enter total meal cost" aria-describedby="basic-addon2">
-    <button type="button" class="btn btn-success" (click)="goToPage('party-input')">Next</button>
+<div class="split-grid">
+  <div class="center-text column-left">
+    <h2 class="center-text">Let's split the bill!</h2>
+    <div class="text-grid">This application is designed to help split the bill among your group of friends. This process will take you on the steps to split your bill evenly, including added tips and taxes.</div>
+    <div>
+      <button type="button" class="btn btn-success btn-format" (click)="goToPage('bill-total')">Let's Play</button>
+    </div>
+  </div>
 
-</h4>
-
-
-
-
-
-<!-- <div class="align-center">
-    
-    <input  style="display: inline" type="text" class="form-control box-size" placeholder="Enter total meal cost" aria-describedby="basic-addon2">
+  <div class="center-text column-right">
+    <h2 class="center-text">Let's have some fun!</h2>
+    <div class="text-grid">Text about what the app is going to do</div>
+    <div>
+      <button type="button" class="btn btn-success btn-format" (click)="goToPage('party-input')">Russian Roulette</button>
+    </div>
+  </div>
 </div>
-<h4>Enter Party Number</h4>
-<div class="align-center">
-    
-    <input  style="display: inline" type="text" class="form-control box-size" placeholder="Enter Party Number" aria-describedby="basic-addon2">
-
-</div>
-<h4>Enter tip amountr</h4>
-<div class="align-center">
-    
-    <mat-radio-group>
-        <mat-radio-button value="1">Option 1</mat-radio-button>
-        <mat-radio-button value="2">Option 2</mat-radio-button>
-      </mat-radio-group>
-   
-</div> -->
