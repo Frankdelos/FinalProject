@@ -10,8 +10,8 @@
         <h2>Step 2 of 4</h2>
         <br>Enter the amount of people in your party
         <div class="align-center">
-            <input type="text" class="form-control box-size" placeholder="Enter Amount of People In Group" aria-describedby="basic-addon2">
-            <button type="button" class="btn btn-success btn-format" (click)="goToPage('party-input')">Next Step</button>
+            <input [(ngModel)]="user.amountInParty" type="text" class="form-control box-size" placeholder="Enter Amount of People In Group" aria-describedby="basic-addon2">
+            <button type="button" class="btn btn-success btn-format" (click)="nextStep(user)">Next Step</button>
         </div>
     </div>
 </div>
