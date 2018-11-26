@@ -1,0 +1,29 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LocalStorageService } from '../localStorageService';
+import { IUserData } from '../user-data/user.model';
+import { UserData } from '../user-data/user.model';
+
+@Component({
+  selector: 'app-tip-input',
+  templateUrl: './tip-input.component.html',
+  styleUrls: ['./tip-input.component.css']
+})
+export class TipInputComponent implements OnInit {
+
+  user: IUserData = { mealCost: 0, amountInParty: 0, givingTip: false, tipAmount: 0 };
+  localStorageService: LocalStorageService<UserData>;
+ 
+
+
+  constructor(private router: Router) { this.localStorageService = new LocalStorageService('userdatas');}
+
+  goToPage(path: string) {
+    console.log('from goToPage path: ',path);
+    this.router.navigate([path]);
+  }
+
+  ngOnInit() {
+  }
+
+}

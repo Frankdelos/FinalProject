@@ -1,3 +1,16 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <i class="material-icons">keyboard_backspace</i>
+        <a class="navbar-brand" href="#">Return to homepage</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">                
+              </ul>
+        </div>
+    </nav>
+
 <div class="split-grid">
     <div class="center-text column-left">
         <h2>Process Description</h2>
@@ -7,11 +20,11 @@
     </div>
 
     <div class="center-text column-right">
-        <h2>Step 2 of 4</h2>
+        <h2>Step 2 of 4: How many people in your party?</h2>
         <br>Enter the amount of people in your party
         <div class="align-center">
             <input [(ngModel)]="user.amountInParty" type="text" class="form-control box-size" placeholder="Enter Amount of People In Group" aria-describedby="basic-addon2">
-            <button type="button" class="btn btn-success btn-format" (click)="nextStep(user)">Next Step</button>
+            <button type="button" class="btn btn-success btn-format" (click)="goToPage('tip-input')">Next Step</button>
         </div>
     </div>
 </div>

@@ -19,12 +19,11 @@
   </div>
 
   <div class="center-text column-right"><div>
-      <h2>Step 1 of 4: What's the total bill?</h2>
-      <br>Enter the total amount of the bill
-      <div class="align-center">
-        <input [(ngModel)]="user.mealCost" type="text" class="form-control box-size" placeholder="Enter Total Meal Cost" aria-describedby="basic-addon2">
-        <button type="button" class="btn btn-success btn-format" (click)="nextStep(user)" (click)="goToPage('party-input')">Next Step</button>
-      </div>
+      <h2>Step 4 of 4: Summary</h2>
+      <br> Bill total: {{user.mealCost}} 
+      <br> Party total: {{user.amountInParty}}
+      <br> Tip amount: {{user.tipAmount}}
+
     </div>
   </div>
 </div>

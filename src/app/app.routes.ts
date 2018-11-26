@@ -3,6 +3,8 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { HomeComponent } from './home/home.component';
 import { PartyInputComponent } from './party-input/party-input.component';
 import { BillTotalComponent } from './bill-total/bill-total.component';
+import { TipInputComponent } from './tip-input/tip-input.component';
+import { SummaryComponent } from './summary/summary.component';
 
 const routes: Routes = [
     {
@@ -16,6 +18,14 @@ const routes: Routes = [
     {
         path: 'bill-total',
         component: BillTotalComponent,
+    },
+    {
+        path: 'tip-input',
+        component: TipInputComponent,
+    },
+    {
+        path: 'summary',
+        component: SummaryComponent,
     },
     {
         path: '**',

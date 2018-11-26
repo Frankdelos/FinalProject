@@ -19,6 +19,8 @@ import { AppRoutes } from './app.routes';
 import { HomeComponent } from './home/home.component';
 import { PartyInputComponent } from './party-input/party-input.component';
 import { BillTotalComponent } from './bill-total/bill-total.component';
+import { TipInputComponent } from './tip-input/tip-input.component';
+import { SummaryComponent } from './summary/summary.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { BillTotalComponent } from './bill-total/bill-total.component';
     HomeComponent,
     PartyInputComponent,
     BillTotalComponent,
+    TipInputComponent,
+    SummaryComponent,
 
   ],
   imports: [

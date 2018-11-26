@@ -27,6 +27,11 @@ export class PartyInputComponent implements OnInit {
     this.localStorageService = new LocalStorageService('userdatas');
   }
 
+  goToPage(path: string) {
+    console.log('from goToPage path: ',path);
+    this.router.navigate([path]);
+  }
+
   async ngOnInit() {
     this.activatedRoute.params.subscribe((data: IUserData) => {
       console.log("data being transfered: ", data);
@@ -35,10 +40,7 @@ export class PartyInputComponent implements OnInit {
     });
   }
 
-  // goToPage(path: string) {
-  //   console.log('from goToPage path: ',path);
-  //   this.router.navigate([path]);
-  // }
+
 
   nextStep(user: IUserData, path: string) {
     console.log("from userInput, user: ", user);
