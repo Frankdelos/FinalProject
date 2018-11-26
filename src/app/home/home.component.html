@@ -1,26 +1,20 @@
 <div class="split-grid">
-
-    <div class="center-text column-left">
-      <h2 class="center-text">Let's have some fun!</h2>
-      <div>Text about what the app is going to do</div>
-      <div>
-        <button type="button" class="btn btn-success" (click)="goToPage('bill-total')">Split the bill</button>
-  
-      </div>
-    </div>
-  
-    <div class="column-right">
-  
-      <div class="center-text" style="color: white">
-        <h2 class="center-text">Let's have some fun!</h2>
-        <div>Text about what the app is going to do</div>
-        <div>
-          <button type="button" class="btn btn-success" (click)="goToPage('party-input')">Russian Roulette</button>
-    
-    
-        </div>
-      </div>
-    
+  <div class="center-text column-left">
+    <h2 class="center-text">Let's split the bill!</h2>
+    <div class="text-grid">This application is designed to help split the bill among your group of friends. This
+      process will take you on the steps to split your bill evenly, including added tips and taxes.</div>
+    <div>
+      <button type="button" class="btn btn-success btn-format" (click)="goToPage('bill-total')">Let's Play</button>
     </div>
   </div>
-  
+
+  <div class="center-text column-right">
+    <h2 class="center-text">Let's have some fun!</h2>
+    <div class="text-grid">If you're feeling lucky, test your luck and have one person pay for the whole bill. Just
+      like the famous game of the same name, one unlucky person in your group will be chosen to pay for the bill. Click
+      on the button to find out who is the unlucky one!</div>
+    <div>
+      <button type="button" class="btn btn-success btn-format" (click)="goToPage('party-input')">Russian Roulette</button>
+    </div>
+  </div>
+</div>
