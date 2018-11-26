@@ -1,24 +1,20 @@
 
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-* {
-    margin: 0px;
-    padding: 0px;
-  }
   
-  /* body {
-    width: 100vw;
-    height: 100vh;
-    background-color: #a9c7f8af;
-  } */
+/* body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #a9c7f8af;
+} */
 
-  .align-center{
-    margin: 15px;
-    border: 1px;
-  }
+.align-center{
+  margin: 15px;
+  border: 1px;
+}
 
-  .nav-button{
+.nav-button{
     margin-right: 8px !important;
-  }
+}
 
 h3 {
   margin-top: 20px;
@@ -26,31 +22,35 @@ h3 {
 }
 
 table{
-  table-layout: fixed;
-   
+  table-layout: fixed; 
 }
 
 .button-format{
-margin: 15px;
+  margin: 3px;
+  color: azure;
 }
+
 .btn-format {
   padding: 10px;
   margin: 15px;
-  }
+}
 
 .center-text {
   text-align: center;
   
-  }
+}
+
 .box-size{
-    height: 100px;
-    padding: 10px;
-    border: 1px solid rgb(7, 7, 7);
-    box-sizing: border-box;
-    font-size: 28px;
-    text-align: center;
-  }
-  .text-grid {
-    text-align: center;
-    height: 25vh;
-  }
+  height: 100px;
+  padding: 10px;
+  border: 1px solid rgb(7, 7, 7);
+  box-sizing: border-box;
+  font-size: 28px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.text-grid {
+  text-align: center;
+  height: 25vh;
+}

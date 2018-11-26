@@ -109,5 +109,6 @@
     }
 .text-grid {
     text-align: center;
-    height: 25vh;
+    height: 15vh;
+    margin-top: 50px;
 }
