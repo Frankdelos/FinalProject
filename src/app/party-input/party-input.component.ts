@@ -31,6 +31,7 @@ export class PartyInputComponent implements OnInit {
     this.activatedRoute.params.subscribe((data: IUserData) => {
       console.log("data being transfered: ", data);
       this.currentUser = data
+      this.user.mealCost = this.currentUser.mealCost;
     });
   }
 
