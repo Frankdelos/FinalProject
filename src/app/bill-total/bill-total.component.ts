@@ -19,10 +19,10 @@ export class BillTotalComponent implements OnInit {
   }
 
 
-  goToPage(path: string) {
-    console.log('from goToPage path: ', path);
-    this.router.navigate([path]);
-  }
+  // goToPage(path: string) {
+  //   console.log('from goToPage path: ', path);
+  //   this.router.navigate([path]);
+  // }
 
   ngOnInit() {
   }

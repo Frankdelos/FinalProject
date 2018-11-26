@@ -27,20 +27,18 @@ export class PartyInputComponent implements OnInit {
     this.localStorageService = new LocalStorageService('userdatas');
   }
 
-  goToPage(path: string) {
-    console.log('from goToPage path: ',path);
-    this.router.navigate([path]);
-  }
+  // goToPage(path: string) {
+  //   console.log('from goToPage path: ',path);
+  //   this.router.navigate([path]);
+  // }
 
   async ngOnInit() {
     this.activatedRoute.params.subscribe((data: IUserData) => {
       console.log("data being transfered: ", data);
-      this.currentUser = data
+      this.currentUser = data;
       this.user.mealCost = this.currentUser.mealCost;
     });
   }
-
-
 
   nextStep(user: IUserData, path: string) {
     console.log("from userInput, user: ", user);
@@ -51,7 +49,7 @@ export class PartyInputComponent implements OnInit {
         console.log('show toast here');
       } else {
         this.localStorageService.saveItemsToLocalStorage(user);
-        this.router.navigate(['']);
+        this.router.navigate(['tip-input', user]);
       }
     }
 
