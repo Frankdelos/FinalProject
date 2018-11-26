@@ -6,14 +6,14 @@ export class LocalStorageService<T> {
 
     }
 
-    saveItemsToLocalStorage(userdatas: Array<T>) {
-        const savedData = localStorage.setItem(this.key, JSON.stringify(userdatas));
-        return savedData;
+    saveItemsToLocalStorage(items: Array<T> | T) {
+        const savedItems = localStorage.setItem(this.key, JSON.stringify(items));
+        return savedItems;
     }
 
     getItemsFromLocalStorage() {
-        const savedData = JSON.parse(localStorage.getItem(this.key));
-        return savedData;
+        const savedItems = JSON.parse(localStorage.getItem(this.key));
+        return savedItems;
     }
 
     clearItemFromLocalStorage() {

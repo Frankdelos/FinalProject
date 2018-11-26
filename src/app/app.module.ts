@@ -11,6 +11,7 @@ import { MainFooterComponent } from './main-footer/main-footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialDesignModule } from '../material-design/material-design.module';
 import { MatRadioModule } from '@angular/material/radio';
+import { HttpModule } from '@angular/http';
 
 
 //routing material
@@ -37,7 +38,8 @@ import { BillTotalComponent } from './bill-total/bill-total.component';
     BrowserAnimationsModule,
     MaterialDesignModule,
     AppRoutes,
-    MatRadioModule
+    MatRadioModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent],

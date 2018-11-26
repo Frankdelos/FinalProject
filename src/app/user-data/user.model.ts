@@ -12,8 +12,8 @@ export class UserData {
     givingTip?: boolean;
     tipAmount?: number;
 
-    constructor(UserData: IUserData) {
-        Object.assign(this, UserData);
+    constructor(userData: IUserData) {
+        Object.assign(this, userData);
     }
 
 }

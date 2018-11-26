@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserData } from '../user-data/user.model';
+import { LocalStorageService } from '../localStorageService';
 
 @Component({
   selector: 'app-user-data',
@@ -9,9 +10,15 @@ import { UserData } from '../user-data/user.model';
 export class UserDataComponent implements OnInit {
 
   userDatas: Array<UserData> = [];
-  constructor() { }
+  // localStorageService: LocalStorageService<UserData>;
+  constructor() {
+    // this.localStorageService = new LocalStorageService('userdatas');
+   }
 
   ngOnInit() {
   }
+
+ 
+
 
 }
