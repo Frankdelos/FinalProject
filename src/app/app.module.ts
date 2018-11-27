@@ -6,13 +6,13 @@ import { AppComponent } from './app.component';
 import { MainHeaderComponent } from './main-header/main-header.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { MainFooterComponent } from './main-footer/main-footer.component';
+import { ToastModule } from './toast/toast.module';
 
 //angular material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialDesignModule } from '../material-design/material-design.module';
 import { MatRadioModule } from '@angular/material/radio';
 import { HttpModule } from '@angular/http';
-
 
 //routing material
 import { AppRoutes } from './app.routes';
@@ -21,6 +21,7 @@ import { PartyInputComponent } from './party-input/party-input.component';
 import { BillTotalComponent } from './bill-total/bill-total.component';
 import { TipInputComponent } from './tip-input/tip-input.component';
 import { SummaryComponent } from './summary/summary.component';
+
 
 @NgModule({
   declarations: [
@@ -32,8 +33,7 @@ import { SummaryComponent } from './summary/summary.component';
     PartyInputComponent,
     BillTotalComponent,
     TipInputComponent,
-    SummaryComponent,
-
+    SummaryComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +43,8 @@ import { SummaryComponent } from './summary/summary.component';
     MaterialDesignModule,
     AppRoutes,
     MatRadioModule,
-    HttpModule
+    HttpModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent],
