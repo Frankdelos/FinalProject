@@ -56,15 +56,54 @@ export class SummaryComponent implements OnInit {
     
   // }
 
+  // calculateTipTotal (){
+  //   const CalTax = .0725;
+  //   const total = this.user.mealCost / this.user.amountInParty;
+  //   const adjustedTip = this.user.tipAmount / 100;
+  //   const tipToBeAddedToTotal = total * adjustedTip; 
+  //   const finalSplit = total + tipToBeAddedToTotal;
+  //   const TaxToBeAddedToTotal = 
+  //   console.log('Split amount without tip -->', total);
+  //   console.log ('tip to add to total is ---> ', tipToBeAddedToTotal);
+  //   console.log('each person pays(tip) -->', finalSplit);
+  //   console.log('adjusted tip is --> ', adjustedTip);
+  //   return finalSplit;
+  // }
+
   calculateTipTotal (){
-    const total = this.user.mealCost / this.user.amountInParty;
+    const calTax = .0725;
     const adjustedTip = this.user.tipAmount / 100;
-    const tipToBeAddedToTotal = total * adjustedTip; 
-    const finalSplit = total + tipToBeAddedToTotal;
-    console.log('Split amount without tip -->', total);
-    console.log ('tip to add to total is ---> ', tipToBeAddedToTotal);
-    console.log('each person pays(tip) -->', finalSplit);
-    console.log('adjusted tip is --> ', adjustedTip);
-    return finalSplit;
+    const taxAmount = this.user.mealCost * calTax;
+    
+    const totalIncludingTax = this.user.mealCost*1 + taxAmount*1;
+    const tipAmount = totalIncludingTax * adjustedTip;
+    const totalWithTaxAndTip = totalIncludingTax + tipAmount;
+
+
+
+    // const totalSplitPreTax = this.user.mealCost / this.user.amountInParty;
+    const totalSplitTaxPlusTip = totalWithTaxAndTip / this.user.amountInParty;
+
+    console.log('meal cost is ', this.user.mealCost);
+    console.log('Adjusted tip: ', adjustedTip);
+    console.log('amount taxed: ', taxAmount);
+    console.log('Meal plus tax: ', totalIncludingTax);
+    console.log('Tip amount on taxed total: ', tipAmount);
+    console.log('Total with tip and tax included: ', totalWithTaxAndTip);
+    console.log('Total split including tax and tip: ', totalSplitTaxPlusTip);
+
+
+    
+
+
+
+
+
+
+
   }
+
+
+
+
 }
