@@ -4,6 +4,7 @@ import { LocalStorageService } from '../localStorageService';
 import { IUserData } from '../user-data/user.model';
 import { UserData } from '../user-data/user.model';
 import { ActivatedRoute } from '@angular/router';
+import { ToastService } from '../toast/toast.service';
 
 
 @Component({
@@ -23,35 +24,33 @@ export class PartyInputComponent implements OnInit {
     tipAmount: 0
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private toastService: ToastService) { 
     this.localStorageService = new LocalStorageService('userdatas');
   }
 
-  goToPage(path: string) {
-    console.log('from goToPage path: ',path);
-    this.router.navigate([path]);
-  }
+  // goToPage(path: string) {
+  //   console.log('from goToPage path: ',path);
+  //   this.router.navigate([path]);
+  // }
 
   async ngOnInit() {
     this.activatedRoute.params.subscribe((data: IUserData) => {
       console.log("data being transfered: ", data);
-      this.currentUser = data
+      this.currentUser = data;
       this.user.mealCost = this.currentUser.mealCost;
     });
   }
 
-
-
   nextStep(user: IUserData, path: string) {
     console.log("from userInput, user: ", user);
     if (user.amountInParty === null) {
-      console.log('show toast here 2');
+      this.toastService.showToast('warning', 'Please input a party amount!', 4000);
     } else {
       if (user.amountInParty === 0) {
-        console.log('show toast here');
+        this.toastService.showToast('warning', 'Please input a party amount above 0!', 4000);
       } else {
         this.localStorageService.saveItemsToLocalStorage(user);
-        this.router.navigate(['']);
+        this.router.navigate(['tip-input', user]);
       }
     }
 

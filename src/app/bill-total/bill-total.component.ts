@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { LocalStorageService } from '../localStorageService';
 import { IUserData } from '../user-data/user.model';
 import { UserData } from '../user-data/user.model';
-
+import { ToastService } from '../toast/toast.service';
 
 @Component({
   selector: 'app-bill-total',
@@ -14,15 +14,16 @@ export class BillTotalComponent implements OnInit {
 
   user: IUserData = { mealCost: 0, amountInParty: 0, givingTip: false, tipAmount: 0 };
   localStorageService: LocalStorageService<UserData>;
-  constructor(private router: Router) { 
+
+  constructor(private router: Router, private toastService: ToastService) { 
     this.localStorageService = new LocalStorageService('userdatas');
   }
 
 
-  goToPage(path: string) {
-    console.log('from goToPage path: ', path);
-    this.router.navigate([path]);
-  }
+  // goToPage(path: string) {
+  //   console.log('from goToPage path: ', path);
+  //   this.router.navigate([path]);
+  // }
 
   ngOnInit() {
   }
@@ -30,10 +31,10 @@ export class BillTotalComponent implements OnInit {
   nextStep(user: IUserData, path: string) {
     console.log("from userInput, user: ", user);
     if (user.mealCost === null) {
-      console.log('show toast here 2');
+      this.toastService.showToast('warning', 'Please input a cost', 4000)
     } else {
       if (user.mealCost === 0) {
-        console.log('show toast here');
+        this.toastService.showToast('warning', 'Please input a cost above $0', 4000)
       } else {
         this.localStorageService.saveItemsToLocalStorage(user);
         this.router.navigate(['party-input', user]);

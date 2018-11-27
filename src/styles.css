@@ -54,3 +54,33 @@ table{
   text-align: center;
   height: 25vh;
 }
+
+.column-left {
+  background-color: #01579B;
+  color: white;
+  /* float: left; */
+  width: 50vw;
+  padding: 10px;
+  height: 100vh;
+}
+    
+.column-right {
+  color: white;
+  background-color: #81D4FA;
+  /* float: right; */
+  width: 50vw;
+  padding: 10px;
+  height: 100vh;
+}
+.split-grid {
+ display: grid;
+ grid-template-columns: 1fr 3fr;
+}
+
+.toast-container {
+  width: 500px;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  margin-top: 50px;
+}
