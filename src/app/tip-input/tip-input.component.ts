@@ -4,6 +4,7 @@ import { LocalStorageService } from '../localStorageService';
 import { IUserData } from '../user-data/user.model';
 import { UserData } from '../user-data/user.model';
 import { ActivatedRoute } from '@angular/router';
+import { ToastService } from '../toast/toast.service';
 
 @Component({
   selector: 'app-tip-input',
@@ -22,7 +23,7 @@ export class TipInputComponent implements OnInit {
     tipAmount: 0
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private toastService: ToastService) {
     this.localStorageService = new LocalStorageService('userdatas');
   }
 
@@ -43,7 +44,7 @@ export class TipInputComponent implements OnInit {
   nextStep(user: IUserData, path: string) {
     console.log("from userInput, user: ", user);
     if (user.tipAmount === 0) {
-      console.log('show toast here 2');
+      this.toastService.showToast('warning', 'Please input a tip above 0!', 4000);
     } else {
       this.localStorageService.saveItemsToLocalStorage(user);
       this.router.navigate(['summary', user]);
