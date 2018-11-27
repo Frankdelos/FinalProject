@@ -49,5 +49,22 @@ export class SummaryComponent implements OnInit {
   //       this.router.navigate(['']);
   // }
 
+  // calculateTotal (){
+  //   const total = this.user.mealCost / this.user.amountInParty;
+  //   console.log ('each person pays(no tip) --> ', total);
+  //   return total;
+    
+  // }
 
+  calculateTipTotal (){
+    const total = this.user.mealCost / this.user.amountInParty;
+    const adjustedTip = this.user.tipAmount / 100;
+    const tipToBeAddedToTotal = total * adjustedTip; 
+    const finalSplit = total + tipToBeAddedToTotal;
+    console.log('Split amount without tip -->', total);
+    console.log ('tip to add to total is ---> ', tipToBeAddedToTotal);
+    console.log('each person pays(tip) -->', finalSplit);
+    console.log('adjusted tip is --> ', adjustedTip);
+    return finalSplit;
+  }
 }
