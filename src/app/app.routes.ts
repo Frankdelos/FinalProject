@@ -5,6 +5,7 @@ import { PartyInputComponent } from './party-input/party-input.component';
 import { BillTotalComponent } from './bill-total/bill-total.component';
 import { TipInputComponent } from './tip-input/tip-input.component';
 import { SummaryComponent } from './summary/summary.component';
+import { ResultsPageComponent } from './results-page/results-page.component';
 
 const routes: Routes = [
     {
@@ -26,6 +27,10 @@ const routes: Routes = [
     {
         path: 'summary',
         component: SummaryComponent,
+    },
+    {
+        path: 'results-page',
+        component: ResultsPageComponent,
     },
     {
         path: '**',

@@ -21,6 +21,7 @@ import { PartyInputComponent } from './party-input/party-input.component';
 import { BillTotalComponent } from './bill-total/bill-total.component';
 import { TipInputComponent } from './tip-input/tip-input.component';
 import { SummaryComponent } from './summary/summary.component';
+import { ResultsPageComponent } from './results-page/results-page.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { SummaryComponent } from './summary/summary.component';
     PartyInputComponent,
     BillTotalComponent,
     TipInputComponent,
-    SummaryComponent
+    SummaryComponent,
+    ResultsPageComponent,
   ],
   imports: [
     BrowserModule,
