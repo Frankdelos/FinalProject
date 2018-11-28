@@ -12,10 +12,10 @@ import { ToastService } from '../toast/toast.service';
 })
 export class BillTotalComponent implements OnInit {
 
-  user: IUserData = { mealCost: 0, amountInParty: 0, givingTip: false, tipAmount: 0 };
+  user: IUserData = { mealCost: null, amountInParty: null, givingTip: null, tipAmount: null };
   localStorageService: LocalStorageService<UserData>;
 
-  constructor(private router: Router, private toastService: ToastService) { 
+  constructor(private router: Router, private toastService: ToastService) {
     this.localStorageService = new LocalStorageService('userdatas');
   }
 
@@ -29,11 +29,10 @@ export class BillTotalComponent implements OnInit {
   }
 
   nextStep(user: IUserData, path: string) {
-    console.log("from userInput, user: ", user);
     if (user.mealCost === null) {
       this.toastService.showToast('warning', 'Please input a cost', 4000)
     } else {
-      if (user.mealCost === 0) {
+      if (user.mealCost == 0) {
         this.toastService.showToast('warning', 'Please input a cost above $0', 4000)
       } else {
         this.localStorageService.saveItemsToLocalStorage(user);
@@ -43,17 +42,22 @@ export class BillTotalComponent implements OnInit {
 
   }
 
+  previousStep(user: IUserData, path: string) {
+    //  this.localStorageService.saveItemsToLocalStorage(user);
+    this.router.navigate(['']);
+  }
+
   saveItemsToLocalStorage(userdatas: Array<UserData>) {
     return this.localStorageService.saveItemsToLocalStorage(userdatas);
     // const savedData = localStorage.setItem(this.key, JSON.stringify(userdatas));
     // return savedData;
-}
+  }
 
-getItemsFromLocalStorage() {
-  return this.localStorageService.getItemsFromLocalStorage();
+  getItemsFromLocalStorage() {
+    return this.localStorageService.getItemsFromLocalStorage();
     // const savedData = JSON.parse(localStorage.getItem(this.key));
     // return savedData;
-}
+  }
 
 
 

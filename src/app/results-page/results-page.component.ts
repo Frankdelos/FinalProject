@@ -18,10 +18,10 @@ export class ResultsPageComponent implements OnInit {
   currentUser: IUserData;
   localStorageService: LocalStorageService<UserData>;
   user: IUserData = {
-    mealCost: 0,
-    amountInParty: 0,
-    givingTip: false,
-    tipAmount: 0
+    mealCost: null,
+    amountInParty: null,
+    givingTip: null,
+    tipAmount: null
   };
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private toastService: ToastService) { 
@@ -44,18 +44,7 @@ export class ResultsPageComponent implements OnInit {
   }
 
   nextStep(user: IUserData, path: string) {
-    console.log("from userInput, user: ", user);
-    if (user.amountInParty === null) {
-      this.toastService.showToast('warning', 'Please input a party amount!', 4000);
-    } else {
-      if (user.amountInParty === 0) {
-        this.toastService.showToast('warning', 'Please input a party amount above 0!', 4000);
-      } else {
-        this.localStorageService.saveItemsToLocalStorage(user);
-        this.router.navigate(['tip-input', user]);
-      }
-    }
-
+    this.router.navigate(['', user]);
   }
 
   saveItemsToLocalStorage(userdatas: Array<UserData>) {
