@@ -39,11 +39,24 @@
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="user.tipAmount">
-                <label class="form-check-label" for="inlineRadio2">Custom</label>
-                <input [(ngModel)]="user.tipAmount" type="text" class="form-control" placeholder="Custom tip">
+                <label class="form-check-label" for="inlineRadio2" (click)="addTip">Custom tip</label>
+
+                <div *ngIf="editMode === true"> 
+                    <input [(ngModel)]="user.tipAmount" type="text" class="form-control text-box" placeholder="">
+                </div>
+               
 
             </div>
         </div>
-        <button type="button" class="btn btn-success btn-format" (click)="nextStep(user)">Next Step</button>
+        <button type="button" class="btn btn-secondary btn-format" (click)="nextStep(user)">
+            <i class="material-icons">
+                chevron_right
+            </i>
+        </button>
+        <button type="button" class="btn btn-secondary btn-format" (click)="nextStep(user)">
+            <i class="material-icons">
+                chevron_left
+            </i>
+        </button>
     </div>
 </div>

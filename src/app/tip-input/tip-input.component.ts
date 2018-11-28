@@ -13,6 +13,8 @@ import { ToastService } from '../toast/toast.service';
 })
 export class TipInputComponent implements OnInit {
 
+
+  editMode: boolean = false;
   userParams = '';
   currentUser: IUserData;
   localStorageService: LocalStorageService<UserData>;
@@ -62,6 +64,11 @@ export class TipInputComponent implements OnInit {
     return this.localStorageService.getItemsFromLocalStorage();
     // const savedData = JSON.parse(localStorage.getItem(this.key));
     // return savedData;
+  }
+
+  addTip(){
+    this.editMode = true;
+    console.log('from addTip');
   }
 
 

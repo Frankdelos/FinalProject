@@ -7,32 +7,25 @@
   background-color: #a9c7f8af;
 } */
 
-.align-center{
-  margin: 15px;
-  border: 1px;
-}
+
 
 .nav-button{
     margin-right: 8px !important;
 }
 
-h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
 
 table{
   table-layout: fixed; 
 }
 
-.button-format{
-  margin: 3px;
-  color: azure;
+.align-center{
+  margin: 15px;
+  border: 1px;
 }
 
 .btn-format {
-  padding: 10px;
-  margin: 15px;
+  margin: 10px;
+  float: right;
 }
 
 .center-text {
