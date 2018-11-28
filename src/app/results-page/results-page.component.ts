@@ -39,7 +39,7 @@ export class ResultsPageComponent implements OnInit {
       this.currentUser = data;
       this.user.mealCost = this.currentUser.mealCost;
       this.user.amountInParty = this.currentUser.amountInParty;
-      this.user.tipAmount = this.currentUser.amountInParty;
+      this.user.tipAmount = this.currentUser.tipAmount;
     });
   }
 
@@ -70,7 +70,22 @@ export class ResultsPageComponent implements OnInit {
     // return savedData;
   }
 
+  calculateBillSplit (){
+    const finalSplit = ((this.user.mealCost * (this.user.tipAmount/100)) + (this.user.mealCost*1)) / this.user.amountInParty;
+    return finalSplit.toFixed(2);
+  }
 
+  convertTipToDecimal(){
+    const adjustedTip = this.user.tipAmount / 100;
+    const tipAmount = this.user.mealCost * adjustedTip;
+    return tipAmount.toFixed(2);
+  }
+
+  calculateTotalWithTip(){
+    const totalWithTip = (this.user.mealCost*1) + (this.user.mealCost*(this.user.tipAmount/100));
+    return totalWithTip.toFixed(2);
+
+  }
 
 
 }

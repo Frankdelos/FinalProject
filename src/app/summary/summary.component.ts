@@ -59,4 +59,8 @@ export class SummaryComponent implements OnInit {
 
   }
 
+
+  //Calculations
+  
+
 }

@@ -5,8 +5,32 @@
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-    </ul>
+  <div class="results-header">
+    <br>Results
   </div>
 </nav>
+
+<div class="results-split-grid">
+  <div class="center-text results-column-left">
+    <h2>Process Description</h2>
+    <div class="text-grid">
+      Final Page! This results page breaks down how
+      much each person owes given the information you entered.
+      If you want to have a bit more fun, try the Russian Roullete portion.
+      Thanks for using Bill Splitter.</div>
+  </div>
+
+  <div class="center-text results-column-right">
+     <h2>Your bill summary</h2>
+     <div class="container">
+       <div class="align-text">
+      Bill: ${{user.mealCost}}
+      <br>People: {{user.amountInParty}}
+      <br>Tip: {{user.tipAmount}}% (${{convertTipToDecimal()}})
+      <br>Total: ${{calculateTotalWithTip()}}
+      <br>Each: ${{calculateBillSplit()}}
+    </div>
+     </div>
+    
+  </div>
+</div>
