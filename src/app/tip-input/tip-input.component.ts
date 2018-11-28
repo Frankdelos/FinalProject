@@ -19,10 +19,10 @@ export class TipInputComponent implements OnInit {
   currentUser: IUserData;
   localStorageService: LocalStorageService<UserData>;
   user: IUserData = {
-    mealCost: 0,
-    amountInParty: 0,
-    givingTip: false,
-    tipAmount: 0
+    mealCost: null,
+    amountInParty: null,
+    givingTip: null,
+    tipAmount: null
   };
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private toastService: ToastService) {
@@ -44,14 +44,21 @@ export class TipInputComponent implements OnInit {
   }
 
   nextStep(user: IUserData, path: string) {
-    console.log("from userInput, user: ", user);
-    if (user.tipAmount === 0) {
-      this.toastService.showToast('warning', 'Please input a tip above 0!', 4000);
+    if (user.tipAmount === null) {
+      this.toastService.showToast('warning', 'Please input a tip!', 4000);
     } else {
-      this.localStorageService.saveItemsToLocalStorage(user);
-      this.router.navigate(['summary', user]);
+      if (user.tipAmount == 0) {
+        this.toastService.showToast('warning', 'Please input a party amount above 0!', 4000);
+      } else {
+        this.localStorageService.saveItemsToLocalStorage(user);
+        this.router.navigate(['summary', user]);
+      }
     }
+  }
 
+  previousStep(user: IUserData, path: string) {
+    //  this.localStorageService.saveItemsToLocalStorage(user);
+     this.router.navigate(['party-input',user]);
   }
 
   saveItemsToLocalStorage(userdatas: Array<UserData>) {
