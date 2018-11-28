@@ -3,6 +3,7 @@ export interface IUserData {
     amountInParty: number;
     givingTip: boolean;
     tipAmount?: number;
+
 }
 
 export class UserData {

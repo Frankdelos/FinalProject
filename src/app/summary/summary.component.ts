@@ -19,9 +19,9 @@ export class SummaryComponent implements OnInit {
     mealCost: 0,
     amountInParty: 0,
     givingTip: false,
-    tipAmount: 0
-  };
+    tipAmount: 0,
 
+  };
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
     this.localStorageService = new LocalStorageService('userdatas');
