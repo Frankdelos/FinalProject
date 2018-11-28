@@ -22,11 +22,14 @@
   }
 
   .align-text{
-  text-align: left;  
+  text-align: left; 
+  border: dashed; 
+  border-color: black;
 }
 
   .container{
     display: grid;
+    grid-template-rows: 200px 100px;
     width: 200px;
     position: relative;
     top: 30px;

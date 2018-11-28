@@ -42,6 +42,10 @@ export class ResultsPageComponent implements OnInit {
       this.user.tipAmount = this.currentUser.tipAmount;
     });
   }
+  goToPage(path: string) {
+    console.log('from goToPage path: ',path);
+    this.router.navigate([path]);
+  }
 
   nextStep(user: IUserData, path: string) {
     this.router.navigate(['', user]);

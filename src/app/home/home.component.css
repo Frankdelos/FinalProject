@@ -73,6 +73,9 @@
     color: white;
     border-radius: 4px;
 }
+.font{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
 
 /* Create two equal columns that floats next to each other */
