@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <i class="material-icons">keyboard_backspace</i>
-  <a class="navbar-brand" href="#">Return to homepage</a>
+  <a class="navbar-brand font" href="#">Return to homepage</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -14,17 +14,17 @@
 
   <div class="center-text column-left">
     <h2>Process Description</h2>
-    <div class="text-grid">Welcome to the first step! If you choose to read these instructions, we'll make things easy
+    <div class="text-grid font">Welcome to the first step! If you choose to read these instructions, we'll make things easy
       to follow! Here, all you need to do is enter the total cost of the meal and
       hit that next button!</div>
   </div>
 
-  <div class="center-text column-right">
+  <div class="center-text column-right font">
     <div>
       <h2>Step 1 of 4: What's the total bill?</h2>
       <br>Enter the total amount of the bill
       <div class="align-center">
-        <input [(ngModel)]="user.mealCost" type="text" class="form-control box-size" placeholder="Enter Total Meal Cost"
+        <input [(ngModel)]="user.mealCost" type="text" class="form-control box-size font" placeholder="Enter Total Meal Cost"
           aria-describedby="basic-addon2">
 
         <button type="button" class="btn btn-secondary btn-format" (click)="nextStep(user)">

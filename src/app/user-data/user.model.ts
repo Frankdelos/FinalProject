@@ -3,6 +3,7 @@ export interface IUserData {
     amountInParty: number;
     givingTip: boolean;
     tipAmount?: number;
+    userNames?: string;
 }
 
 export class UserData {
@@ -11,6 +12,7 @@ export class UserData {
     amountInParty?: number;
     givingTip?: boolean;
     tipAmount?: number;
+    userNames?: string;
 
     constructor(userData: IUserData) {
         Object.assign(this, userData);

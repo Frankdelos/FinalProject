@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <i class="material-icons">keyboard_backspace</i>
+  <a class="navbar-brand font" href="#">Return to homepage</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+    </ul>
+  </div>
+</nav>
+<div class="split-grid">
+
+  <div class="center-text column-left-1 font">
+    <h2>Process Description</h2>
+    <div class="text-grid font">Welcome to the Russian Roulette Page! If you chose this page,
+      it's because you want some fun. The rules are simple: input your bill total, how much you want to tip,
+      your friend's or family's name, then WE will randomly choose who will pay for it all.
+    </div>
+  </div>
+
+  <div class="center-text column-right-1 font">
+    <div>
+      <h2>Russian Roulette</h2>
+      <div>
+        <mat-card class="example-card">
+          <mat-card-content>
+            <p>
+              <label for="mealCost">Bill total:</label>
+              <input [(ngModel)]="user.mealCost" type="text" class="form-control" placeholder="Bill total" aria-label="id"
+                aria-describedby="basic-addon1">
+            </p>
+            <!-- TIP INPUT -->
+            <p>
+              <label for="tipAmount">Tip:</label>
+              </p>
+            <div class="tipClass">
+              <div class="form-check form-check-inline">
+                <input [(ngModel)]="user.tipAmount" class="form-check-input font" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                    value="10">
+                <label class="form-check-label" for="inlineRadio1">10%</label>
+            </div>
+            <div class="form-check form-check-inline font">
+                <input [(ngModel)]="user.tipAmount" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                    value="15">
+                <label class="form-check-label" for="inlineRadio2">15%</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input [(ngModel)]="user.tipAmount" class="form-check-input font" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                    value="20">
+                <label class="form-check-label" for="inlineRadio3">20%</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input font" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="user.tipAmount"
+                    (click)="addTip()">
+                <label class="form-check-label">Custom tip</label>
+                <div *ngIf="editMode == true">
+                    <input [(ngModel)]="user.tipAmount" type="text" class="form-control text-box font" placeholder="">
+                </div>
+            </div>
+          </div>
+            
+            <p>
+              <label for="userNames">Name:</label>
+                <input [(ngModel)]="user.userNames" type="text" class="form-control" placeholder="Name" aria-label="last"
+                aria-describedby="basic-addon1">
+              
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="addPerson()">Add</button>
+            <div *ngFor="let person of people; let i = index">
+              <input [(ngModel)]="user.userNames" type="text" class="form-control" placeholder="Name" aria-label="last"
+                aria-describedby="basic-addon1">
+              </div>
+              
+            <button mat-raised-button color="warn">Delete</button>
+          
+           
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
