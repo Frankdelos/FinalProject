@@ -17,6 +17,7 @@ export interface IPerson {
 export class RussianPageComponent implements OnInit {
 
   editMode: boolean = false;
+  index = 0;
   editMode2: boolean = false;
   person: Array<IPerson> = [];
   user: IUserData = {
@@ -37,13 +38,13 @@ export class RussianPageComponent implements OnInit {
   }
 
   addPerson(){
-    this.editMode2 = true;
     const person : IPerson = {
       russianNames: null
     }
     console.log('from addPerson');
     this.person.push(person);
     this.saveToLocalStorage();
+    
 
   }
 
