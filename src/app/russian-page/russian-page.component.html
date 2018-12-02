@@ -70,7 +70,7 @@
           </mat-card-content>
           <mat-card-actions>
             <button mat-raised-button color="primary" (click)="addPerson()">Add</button>
-            <div *ngIf="index < person.length">
+            <div *ngIf="editMode === true">
               <input [(ngModel)]="user.userNames" type="text" class="form-control" placeholder="Name" aria-label="last"
                 aria-describedby="basic-addon1">
               </div>
