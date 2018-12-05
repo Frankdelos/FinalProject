@@ -12,7 +12,7 @@ import { ToastService } from '../toast/toast.service';
 })
 export class BillTotalComponent implements OnInit {
 
-  user: IUserData = { mealCost: null, amountInParty: null, givingTip: null, tipAmount: null };
+  user: IUserData = { mealCost: null, amountInParty: null, tipAmount: null };
   localStorageService: LocalStorageService<UserData>;
 
   constructor(private router: Router, private toastService: ToastService) {
