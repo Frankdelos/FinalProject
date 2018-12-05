@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IUserData } from '../user-data/user.model';
 import { LocalStorageService } from '../localStorageService';
-import { RussianData } from '../user-data/user.model';
 import { ToastService } from '../toast/toast.service';
 import { Router } from '@angular/router';
 import { UserData } from '../user-data/user.model';
@@ -25,7 +24,7 @@ export class RussianPageComponent implements OnInit {
   editMode2: boolean = false;
   // persons: Array<IPerson> = [];
   users: Array<IUserData> = [];
-  localStorageService: LocalStorageService<UserData>;
+  localStorageService: LocalStorageService<IUserData>;
   constructor(private router: Router, private toastService: ToastService) {
     this.localStorageService = new LocalStorageService('userdatas');
   }
@@ -49,18 +48,18 @@ export class RussianPageComponent implements OnInit {
     if (users.userNames === null || users.userNames === '') {
       this.toastService.showToast('warning', "Please enter a person's name", 4000);
     } else {
-      this.localStorageService.saveItemsToLocalStorage(this.users);
       console.log("captured data----> ", users);
+      this.localStorageService.saveItemsToLocalStorage(users);
       this.router.navigate(['final-page', users]);
     }
 
-
-
-
   }
-  saveRussianDataToLocalStorage(russiandatas: Array<IUserData>) {
-    return this.localStorageService.saveItemsToLocalStorage(russiandatas);
+
+  previousStep(users: IUserData, path: string) {
+    //  this.localStorageService.saveItemsToLocalStorage(user);
+    this.router.navigate(['home', users]);
   }
+
   saveItemsToLocalStorage(userdatas: Array<UserData>) {
     return this.localStorageService.saveItemsToLocalStorage(userdatas);
     // const savedData = localStorage.setItem(this.key, JSON.stringify(userdatas));
@@ -74,7 +73,7 @@ export class RussianPageComponent implements OnInit {
 
   addPerson(userData: Array<UserData>) {
     const newPerson: IUserData = {
-      userNames: null
+      // userNames: null
     }
     this.users.push(newPerson);
     this.localStorageService.saveItemsToLocalStorage(userData);
@@ -82,10 +81,10 @@ export class RussianPageComponent implements OnInit {
 
   deletePerson(index: number) {
     const newPerson: IUserData = {
-      userNames: null
+      // userNames: null
     }
     this.users.splice(index, 1);
-    this.saveToLocalStorage();
+    this.localStorageService.saveItemsToLocalStorage(this.users);
   }
 
   addTip() {
