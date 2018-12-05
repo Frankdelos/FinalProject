@@ -17,16 +17,15 @@ export interface IPerson {
 export class RussianPageComponent implements OnInit {
 
   editMode: boolean = false;
-  x = false;
-  index = 1;
   editMode2: boolean = false;
-  person: Array<IPerson> = [];
+  persons: Array<IPerson> = [];
   user: IUserData = {
-     mealCost: null,
-      amountInParty: null, 
-      givingTip: null, 
-      tipAmount: null, 
-      userNames: null };
+    mealCost: null,
+    amountInParty: null,
+    givingTip: null,
+    tipAmount: null,
+    userNames: null
+  };
   localStorageService: LocalStorageService<UserData>;
   constructor() { }
 
@@ -38,20 +37,26 @@ export class RussianPageComponent implements OnInit {
 
   }
 
-  addPerson(){
-      for (let i = 1; i< 100; i++) {
-      const person: IPerson = {
-        russianNames: null
-      }
-    };
-    this.person.unshift(person);
-    this.saveToLocalStorage();  
+  addPerson() {
+    const newPerson: IPerson = {
+      russianNames: null
     }
+    this.persons.unshift(newPerson);
+    this.saveToLocalStorage();
+  }
+
+  deletePerson(index: number) {
+    const newPerson: IPerson = {
+      russianNames: null
+    }
+    this.persons.splice(index, 1);
+    this.saveToLocalStorage();
+  }
 
 
-    
-    
-  addTip(){
+
+
+  addTip() {
     this.editMode = true;
     console.log('from addTip');
   }
