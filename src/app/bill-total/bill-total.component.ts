@@ -28,18 +28,30 @@ export class BillTotalComponent implements OnInit {
   ngOnInit() {
   }
 
+  // nextStep(user: IUserData, path: string) {
+  //   if (user.mealCost === null) {
+  //     this.toastService.showToast('warning', 'Please input a cost', 4000)
+  //   } else {
+  //     if (user.mealCost == 0) {
+  //       this.toastService.showToast('warning', 'Please input a cost above $0', 4000)
+  //     } else {
+  //       this.localStorageService.saveItemsToLocalStorage(user);
+  //       this.router.navigate(['party-input', user]);
+  //     }
+  //   }
+
+  // }
   nextStep(user: IUserData, path: string) {
     if (user.mealCost === null) {
-      this.toastService.showToast('warning', 'Please input a cost', 4000)
+      this.toastService.showToast('warning', 'Please input a party amount!', 4000);
+    } else if (isNaN(user.mealCost)) {
+      this.toastService.showToast('warning', 'Please input numbers only!', 4000);
+    } else if (user.mealCost == 0) {
+      this.toastService.showToast('warning', 'Please input a party amount above 0!', 4000);
     } else {
-      if (user.mealCost == 0) {
-        this.toastService.showToast('warning', 'Please input a cost above $0', 4000)
-      } else {
-        this.localStorageService.saveItemsToLocalStorage(user);
-        this.router.navigate(['party-input', user]);
-      }
+      this.localStorageService.saveItemsToLocalStorage(user);
+      this.router.navigate(['tip-input', user]);
     }
-
   }
 
   previousStep(user: IUserData, path: string) {
