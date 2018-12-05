@@ -9,7 +9,6 @@ import { UserData } from '../user-data/user.model';
 export interface IUserData {
   mealCost?: number;
   amountInParty?: number;
-  givingTip?: boolean;
   tipAmount?: number;
   userNames?: string;
 }
@@ -23,8 +22,8 @@ export class RussianPageComponent implements OnInit {
   editMode: boolean = false;
   editMode2: boolean = false;
   // persons: Array<IPerson> = [];
-  users: Array<IUserData> = [];
-  localStorageService: LocalStorageService<IUserData>;
+  users: Array<UserData> = [];
+  localStorageService: LocalStorageService<UserData>;
   constructor(private router: Router, private toastService: ToastService) {
     this.localStorageService = new LocalStorageService('userdatas');
   }
@@ -66,26 +65,28 @@ export class RussianPageComponent implements OnInit {
     // return savedData;
   }
 
-  saveToLocalStorage() {
-    localStorage.setItem('contacts', JSON.stringify(this.users));
+  saveToLocalStorage(key: string, data) {
+    localStorage.setItem(key, JSON.stringify(data));
 
   }
 
-  addPerson(userData: Array<UserData>) {
-    const newPerson: IUserData = {
-      // userNames: null
-    }
-    this.users.push(newPerson);
-    this.localStorageService.saveItemsToLocalStorage(userData);
+  addPerson() {
+    const user: IUserData = {
+      // mealCost: null,
+      // amountInParty: null,
+      // tipAmount: null,
+      userNames: null
+    };
+    this.users.push(user);
+    this.saveToLocalStorage('russianUsers', this.users);
   }
 
   deletePerson(index: number) {
-    const newPerson: IUserData = {
-      // userNames: null
-    }
+    // const newPerson: IUserData = {
+    //   // userNames: null
+    // }
     this.users.splice(index, 1);
-    this.localStorageService.saveItemsToLocalStorage(this.users);
-  }
+    this.saveToLocalStorage('russianUsers', this.users);  }
 
   addTip() {
     this.editMode = true;
