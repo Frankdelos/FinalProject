@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { IUserData } from '../user-data/user.model';
+// import { IUserData } from '../user-data/user.model';
 import { LocalStorageService } from '../localStorageService';
 import { UserData } from '../user-data/user.model';
 import { ToastService } from '../toast/toast.service';
 import { Router } from '@angular/router';
 
 
-// export interface IUser {
-//   mealCost: null,
-//   amountInParty: null,
-//   givingTip: null,
-//   tipAmount: null,
-//   userNames: null
-// }
+export interface IUserData {
+  mealCost?: number;
+  amountInParty?: number;
+  givingTip?: boolean;
+  tipAmount?: number;
+  userNames?: string;
+}
 @Component({
   selector: 'app-russian-page',
   templateUrl: './russian-page.component.html',

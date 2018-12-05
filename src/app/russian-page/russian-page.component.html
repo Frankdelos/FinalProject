@@ -64,7 +64,7 @@
             <!-- LIST OF USERS -->
             <p *ngFor="let user of users; let i = index">
               <label for="userNames">Name:</label>
-                <input [(ngModel)]="users.userNames" type="text" class="form-control" placeholder="Name" aria-label="last"
+                <input [(ngModel)]="newPerson.userNames" type="text" class="form-control" placeholder="Name" aria-label="last"
                   aria-describedby="basic-addon1">
             </p>
           </mat-card-content>
@@ -80,7 +80,7 @@
             chevron_right
           </i>
         </button>
-        <button type="button" class="btn btn-secondary btn-format" (click)="previousStep(user)">
+        <button type="button" class="btn btn-secondary btn-format" (click)="previousStep(users)">
           <i class="material-icons">
             chevron_left
           </i>
