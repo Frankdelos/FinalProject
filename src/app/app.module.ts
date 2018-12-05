@@ -7,6 +7,8 @@ import { MainHeaderComponent } from './main-header/main-header.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { MainFooterComponent } from './main-footer/main-footer.component';
 import { ToastModule } from './toast/toast.module';
+import {MatCardModule} from '@angular/material/card';
+
 
 //angular material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,6 +24,8 @@ import { BillTotalComponent } from './bill-total/bill-total.component';
 import { TipInputComponent } from './tip-input/tip-input.component';
 import { SummaryComponent } from './summary/summary.component';
 import { ResultsPageComponent } from './results-page/results-page.component';
+import { RussianPageComponent } from './russian-page/russian-page.component';
+import { FinalPageComponent } from './final-page/final-page.component';
 
 
 @NgModule({
@@ -36,6 +40,8 @@ import { ResultsPageComponent } from './results-page/results-page.component';
     TipInputComponent,
     SummaryComponent,
     ResultsPageComponent,
+    RussianPageComponent,
+    FinalPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +52,8 @@ import { ResultsPageComponent } from './results-page/results-page.component';
     AppRoutes,
     MatRadioModule,
     HttpModule,
-    ToastModule
+    ToastModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent],

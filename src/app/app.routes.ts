@@ -5,6 +5,8 @@ import { BillTotalComponent } from './bill-total/bill-total.component';
 import { TipInputComponent } from './tip-input/tip-input.component';
 import { SummaryComponent } from './summary/summary.component';
 import { ResultsPageComponent } from './results-page/results-page.component';
+import { RussianPageComponent } from './russian-page/russian-page.component';
+import { FinalPageComponent } from './final-page/final-page.component';
 
 const routes: Routes = [
     {
@@ -30,6 +32,14 @@ const routes: Routes = [
     {
         path: 'results-page',
         component: ResultsPageComponent,
+    },
+    {
+        path: 'russian-page',
+        component: RussianPageComponent,
+    },
+    {
+        path: 'final-page',
+        component: FinalPageComponent,
     },
     {
         path: '**',

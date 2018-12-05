@@ -73,12 +73,12 @@
     color: white;
     border-radius: 4px;
 }
+.font{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
 
-/* Create two equal columns that floats next to each other */
 
-  
-  /* Clear floats after the columns */
   .row:after {
     content: "";
     display: table;
@@ -95,3 +95,11 @@
 .btn-format-home{
     align-content: center;
 }
+ 
+.column-right-R {
+    color: white;
+    background-color: #B71C1C;
+    width: 50vw;
+    padding: 10px;
+    height: 100vh;
+  }

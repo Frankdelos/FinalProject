@@ -1,14 +1,6 @@
 
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
   
-/* body {
-  width: 100vw;
-  height: 100vh;
-  background-color: #a9c7f8af;
-} */
-
-
-
 .nav-button{
     margin-right: 8px !important;
 }
@@ -51,7 +43,6 @@ table{
 .column-left {
   background-color: #01579B;
   color: white;
-  /* float: left; */
   width: 50vw;
   padding: 10px;
   height: 100vh;
@@ -60,7 +51,21 @@ table{
 .column-right {
   color: white;
   background-color: #81D4FA;
-  /* float: right; */
+  width: 50vw;
+  padding: 10px;
+  height: 100vh;
+}
+.column-left-1 {
+  background-color: #B71C1C;
+  color: white;
+  width: 50vw;
+  padding: 10px;
+  height: 100vh;
+}
+    
+.column-right-1 {
+  color: white;
+  background-color: #FDD835;
   width: 50vw;
   padding: 10px;
   height: 100vh;
@@ -76,4 +81,7 @@ table{
   right: 20px;
   top: 20px;
   margin-top: 50px;
+}
+.font{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

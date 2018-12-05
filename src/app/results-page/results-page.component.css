@@ -1,0 +1,36 @@
+.results-column-left {
+    background-color: #01579B;
+    color: white;
+    width: 30vw;
+    padding: 10px;
+    height: 100vh;
+  }
+      
+  .results-column-right {
+    color: white;
+    background-color: #81D4FA;
+    width: 70vw;
+    padding: 10px;
+    height: 100vh;
+  }
+  .results-split-grid {
+   display: grid;
+   grid-template-columns: 1fr 3fr;
+  }
+  .results-header{
+      align-content: left;
+  }
+
+  .align-text{
+  text-align: left; 
+  border: dashed; 
+  border-color: black;
+}
+
+  .container{
+    display: grid;
+    grid-template-rows: 200px 100px;
+    width: 200px;
+    position: relative;
+    top: 30px;
+  }

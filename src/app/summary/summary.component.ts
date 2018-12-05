@@ -53,4 +53,8 @@ export class SummaryComponent implements OnInit {
      this.router.navigate(['tip-input',user]);
   }
 
+
+  //Calculations
+  
+
 }
