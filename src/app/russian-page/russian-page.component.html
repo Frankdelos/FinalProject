@@ -29,7 +29,7 @@
             <!-- MEAL INPUT -->
             <p>
               <label for="mealCost">Bill total:</label>
-              <input [(ngModel)]="user.mealCost" type="text" class="form-control" placeholder="Bill total" aria-label="id"
+              <input [(ngModel)]="users.mealCost" type="text" class="form-control" placeholder="Bill total" aria-label="id"
                 aria-describedby="basic-addon1">
             </p>
             <!-- TIP INPUT -->
@@ -38,17 +38,17 @@
             </p>
             <div class="tipClass">
               <div class="form-check form-check-inline">
-                <input [(ngModel)]="user.tipAmount" class="form-check-input font" type="radio" name="inlineRadioOptions"
+                <input [(ngModel)]="users.tipAmount" class="form-check-input font" type="radio" name="inlineRadioOptions"
                   id="inlineRadio1" value="10">
                 <label class="form-check-label" for="inlineRadio1">10%</label>
               </div>
               <div class="form-check form-check-inline font">
-                <input [(ngModel)]="user.tipAmount" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                <input [(ngModel)]="users.tipAmount" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
                   value="15">
                 <label class="form-check-label" for="inlineRadio2">15%</label>
               </div>
               <div class="form-check form-check-inline">
-                <input [(ngModel)]="user.tipAmount" class="form-check-input font" type="radio" name="inlineRadioOptions"
+                <input [(ngModel)]="users.tipAmount" class="form-check-input font" type="radio" name="inlineRadioOptions"
                   id="inlineRadio3" value="20">
                 <label class="form-check-label" for="inlineRadio3">20%</label>
               </div>
@@ -57,14 +57,14 @@
                   (click)="addTip()">
                 <label class="form-check-label">Custom tip</label>
                 <div *ngIf="editMode == true">
-                  <input [(ngModel)]="user.tipAmount" type="text" class="form-control text-box font" placeholder="">
+                  <input [(ngModel)]="users.tipAmount" type="text" class="form-control text-box font" placeholder="">
                 </div>
               </div>
             </div>
             <!-- LIST OF USERS -->
-            <p *ngFor="let person of persons; let i = index">
+            <p *ngFor="let user of users; let i = index">
               <label for="userNames">Name:</label>
-                <input [(ngModel)]="person.russianNames" type="text" class="form-control" placeholder="Name" aria-label="last"
+                <input [(ngModel)]="users.userNames" type="text" class="form-control" placeholder="Name" aria-label="last"
                   aria-describedby="basic-addon1">
             </p>
           </mat-card-content>
@@ -75,7 +75,7 @@
 
           </mat-card-actions>
         </mat-card>
-        <button type="button" class="btn btn-secondary btn-format" (click)="nextStep(user)">
+        <button type="button" class="btn btn-secondary btn-format" (click)="nextStep(users)">
           <i class="material-icons">
             chevron_right
           </i>
