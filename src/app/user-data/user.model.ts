@@ -1,6 +1,6 @@
 export interface IUserData {
-    mealCost: number;
-    amountInParty: number;
+    mealCost?: number;
+    amountInParty?: number;
     tipAmount?: number;
     userNames?: string;
 }
