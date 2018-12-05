@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IUserData } from '../user-data/user.model';
 import { LocalStorageService } from '../localStorageService';
-import { UserData } from '../user-data/user.model';
+import { Person } from '../user-data/user.model';
 import { ToastService } from '../toast/toast.service';
 import { Router } from '@angular/router';
 
@@ -20,15 +20,14 @@ export class RussianPageComponent implements OnInit {
 
   editMode: boolean = false;
   editMode2: boolean = false;
-  persons: Array<IPerson> = [];
-  user: IUserData = {
+  persons: Array<Person> = [];
+  users: Array<IUserData> = [{
     mealCost: null,
     amountInParty: null,
-    givingTip: null,
     tipAmount: null,
     userNames: null
-  };
-  localStorageService: LocalStorageService<UserData>;
+  }];
+  localStorageService: LocalStorageService<Person>;
   constructor(private router: Router, private toastService: ToastService) { 
     this.localStorageService = new LocalStorageService('userdatas');
   }
@@ -37,35 +36,36 @@ export class RussianPageComponent implements OnInit {
   ngOnInit() {
   }
 
-  nextStep(user: IUserData, path: string) {
-    if (user.mealCost === null) {
+  nextStep(persons: IPerson, path: string) {
+    if (persons.russianBillTotal === null) {
       this.toastService.showToast('warning', 'Please input a cost', 4000)
     } else {
-      if (user.mealCost == 0) {
+      if (persons.russianBillTotal == 0) {
         this.toastService.showToast('warning', 'Please input a cost above $0', 4000)
       } else {
-        this.localStorageService.saveItemsToLocalStorage(user);
-        this.router.navigate(['final-page', user]);
+        this.localStorageService.saveItemsToLocalStorage(persons);
+        this.router.navigate(['final-page', persons]);
       }
     }
 
   }
-  saveItemsToLocalStorage(userdatas: Array<UserData>) {
-    return this.localStorageService.saveItemsToLocalStorage(userdatas);
-    // const savedData = localStorage.setItem(this.key, JSON.stringify(userdatas));
-    // return savedData;
-  }
+  // saveItemsToLocalStorage(userdatas: Array<UserData>) {
+  //   return this.localStorageService.saveItemsToLocalStorage(userdatas);
+  //   // const savedData = localStorage.setItem(this.key, JSON.stringify(userdatas));
+  //   // return savedData;
+  // }
 
   saveToLocalStorage() {
-    localStorage.setItem('contacts', JSON.stringify(this.user));
+    localStorage.setItem('contacts', JSON.stringify(this.persons));
 
   }
 
   addPerson() {
-    const newPerson: IPerson = {
-      russianNames: null
-    }
-    this.persons.push(newPerson);
+    // const newPerson: IPerson = {
+    // russianNames: null
+    // }
+    // this.persons.push(newPerson);
+    this.persons.push(new Person(null));
     this.saveToLocalStorage();
   }
 
