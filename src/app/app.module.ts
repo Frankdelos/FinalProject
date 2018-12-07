@@ -7,7 +7,6 @@ import { MainHeaderComponent } from './main-header/main-header.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { MainFooterComponent } from './main-footer/main-footer.component';
 import { ToastModule } from './toast/toast.module';
-import {MatCardModule} from '@angular/material/card';
 
 
 //angular material
@@ -15,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialDesignModule } from '../material-design/material-design.module';
 import { MatRadioModule } from '@angular/material/radio';
 import { HttpModule } from '@angular/http';
+
 
 //routing material
 import { AppRoutes } from './app.routes';
@@ -53,7 +53,6 @@ import { FinalPageComponent } from './final-page/final-page.component';
     MatRadioModule,
     HttpModule,
     ToastModule,
-    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent],

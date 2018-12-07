@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-// import { IUserData } from '../user-data/user.model';
+import { IUserData } from '../user-data/user.model';
 import { LocalStorageService } from '../localStorageService';
 import { UserData } from '../user-data/user.model';
 import { ToastService } from '../toast/toast.service';
 import { Router } from '@angular/router';
+
 
 
 export interface IUserData {
@@ -22,8 +23,7 @@ export class RussianPageComponent implements OnInit {
 
   editMode: boolean = false;
   editMode2: boolean = false;
-  // persons: Array<IPerson> = [];
-  users: Array<IUserData> = [];
+  users: Array<UserData> = [];
   localStorageService: LocalStorageService<UserData>;
   constructor(private router: Router, private toastService: ToastService) {
     this.localStorageService = new LocalStorageService('userdatas');
@@ -58,9 +58,9 @@ export class RussianPageComponent implements OnInit {
 
 
   }
-  saveRussianDataToLocalStorage(russiandatas: Array<IUserData>) {
-    return this.localStorageService.saveItemsToLocalStorage(russiandatas);
-  }
+  // saveRussianDataToLocalStorage(russiandatas: Array<IUserData>) {
+  //   return this.localStorageService.saveItemsToLocalStorage(russiandatas);
+  // }
   saveItemsToLocalStorage(userdatas: Array<UserData>) {
     return this.localStorageService.saveItemsToLocalStorage(userdatas);
     // const savedData = localStorage.setItem(this.key, JSON.stringify(userdatas));
@@ -73,11 +73,15 @@ export class RussianPageComponent implements OnInit {
   }
 
   addPerson(userData: Array<UserData>) {
-    const newPerson: IUserData = {
-      userNames: null
-    }
-    this.users.push(newPerson);
-    this.localStorageService.saveItemsToLocalStorage(userData);
+    // const newPerson: IUserData = {
+    //   userNames: null
+    // }
+    // console.log('from addPerson');
+    // this.users.push(newPerson);
+    // this.localStorageService.saveItemsToLocalStorage(userData);
+    // return newPerson;
+    this.users.unshift(new UserData({}));
+    console.log('this.contacts...', this.users);
   }
 
   deletePerson(index: number) {
