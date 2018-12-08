@@ -35,7 +35,7 @@ export class BillTotalComponent implements OnInit {
       if (user.mealCost == 0) {
         this.toastService.showToast('warning', 'Please input a cost above $0', 4000)
       } else {
-        // this.localStorageService.saveItemsToLocalStorage(user);
+        this.localStorageService.saveItemsToLocalStorage(user);
         this.router.navigate(['party-input', user]);
       }
     }

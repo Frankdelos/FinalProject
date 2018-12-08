@@ -16,25 +16,25 @@ export class UserData {
     public editing?: boolean;
 
     constructor(userData: IUserData) {
-        userData.editing = this.setState(userData);
+        // userData.editing = this.setState(userData);
         Object.assign(this, userData);
     }
-    setState(userData: IUserData) {
+    // setState(userData: IUserData) {
 
-        if (userData == null || Object.keys(userData).length == 0) {
-            return true;
-        }
-        let editing = false;
-        Object.keys(userData).forEach((key) => {
-            console.log('from my setState...', userData[key])
-            if (userData [key] == null) {
-                editing = true;
-            }
-            console.log();
+    //     if (userData == null || Object.keys(userData).length == 0) {
+    //         return true;
+    //     }
+    //     let editing = false;
+    //     Object.keys(userData).forEach((key) => {
+    //         console.log('from my setState...', userData[key])
+    //         if (userData [key] == null) {
+    //             editing = true;
+    //         }
+    //         console.log();
             
-        });
-        return editing;
-    }
+    //     });
+    //     return editing;
+    // }
 
 }
 
