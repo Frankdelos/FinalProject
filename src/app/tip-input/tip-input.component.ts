@@ -21,7 +21,6 @@ export class TipInputComponent implements OnInit {
   user: IUserData = {
     mealCost: null,
     amountInParty: null,
-    givingTip: null,
     tipAmount: null
   };
 

@@ -1,7 +1,6 @@
 export interface IUserData {
     mealCost?: number;
     amountInParty?: number;
-    givingTip?: boolean;
     tipAmount?: number;
     userNames?: string;
     editing?: boolean;
@@ -37,4 +36,10 @@ export class UserData {
         return editing;
     }
 
+}
+
+export class RussianData {
+    russianBillTotal?: number;
+    russianTip?: number;
+    russianNames?: string;
 }
