@@ -5,6 +5,11 @@ export interface IUserData {
     tipAmount?: number;
     userNames?: string;
 }
+export interface IPerson {
+    russianBillTotal?: number;
+    russianTip?: number;
+    russianNames: string;
+}
 
 export class UserData {
 

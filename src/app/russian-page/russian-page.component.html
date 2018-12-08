@@ -63,9 +63,11 @@
             </div>
             <!-- LIST OF USERS -->
             <p *ngFor="let person of persons; let i = index">
-              <label for="userNames">Name:</label>
+              <label for="russianNames">Name:</label>
                 <input [(ngModel)]="person.russianNames" type="text" class="form-control" placeholder="Name" aria-label="last"
                   aria-describedby="basic-addon1">
+                  <button mat-raised-button color="primary" (click)="saveItemsToLocalStorage()">Save Person</button>
+
             </p>
           </mat-card-content>
           <mat-card-actions>

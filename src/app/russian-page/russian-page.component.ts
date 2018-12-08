@@ -21,40 +21,50 @@ export class RussianPageComponent implements OnInit {
   editMode: boolean = false;
   editMode2: boolean = false;
   persons: Array<IPerson> = [];
-  user: IUserData = {
-    mealCost: null,
-    amountInParty: null,
-    givingTip: null,
-    tipAmount: null,
-    userNames: null
-  };
-  localStorageService: LocalStorageService<UserData>;
-  constructor(private router: Router, private toastService: ToastService) { 
-    this.localStorageService = new LocalStorageService('userdatas');
-  }
+  
+//   russianUser: IPerson {
+//   russianBillTotal: null;
+//   russianTip: null;
+//   russianNames: null;
+// }
+
+user: IUserData = {
+  mealCost: null,
+  amountInParty: null,
+  givingTip: null,
+  tipAmount: null,
+  userNames: null
+};
+
+russianNames = [];
+
+localStorageService: LocalStorageService<UserData>;
+constructor(private router: Router, private toastService: ToastService) {
+  this.localStorageService = new LocalStorageService('userdatas');
+}
 
 
-  ngOnInit() {
-  }
+ngOnInit() {
+}
 
-  nextStep(user: IUserData, path: string) {
-    if (user.mealCost === null) {
-      this.toastService.showToast('warning', 'Please input a cost', 4000)
+nextStep(user: IUserData, path: string) {
+  if (user.mealCost === null) {
+    this.toastService.showToast('warning', 'Please input a cost', 4000)
+  } else {
+    if (user.mealCost == 0) {
+      this.toastService.showToast('warning', 'Please input a cost above $0', 4000)
     } else {
-      if (user.mealCost == 0) {
-        this.toastService.showToast('warning', 'Please input a cost above $0', 4000)
-      } else {
-        this.localStorageService.saveItemsToLocalStorage(user);
-        this.router.navigate(['final-page', user]);
-      }
+      this.localStorageService.saveItemsToLocalStorage(user);
+      this.router.navigate(['final-page', user]);
     }
+  }
 
-  }
-  saveItemsToLocalStorage(userdatas: Array<UserData>) {
-    return this.localStorageService.saveItemsToLocalStorage(userdatas);
-    // const savedData = localStorage.setItem(this.key, JSON.stringify(userdatas));
-    // return savedData;
-  }
+}
+saveItemsToLocalStorage(userdatas: Array<UserData>) {
+  return this.localStorageService.saveItemsToLocalStorage(userdatas);
+  // const savedData = localStorage.setItem(this.key, JSON.stringify(userdatas));
+  // return savedData;
+}
 
   saveToLocalStorage() {
     localStorage.setItem('contacts', JSON.stringify(this.user));
@@ -63,7 +73,7 @@ export class RussianPageComponent implements OnInit {
 
   addPerson() {
     const newPerson: IPerson = {
-      russianNames: null
+      russianNames: null,
     }
     this.persons.push(newPerson);
     this.saveToLocalStorage();
