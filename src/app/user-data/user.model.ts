@@ -1,7 +1,6 @@
 export interface IUserData {
-    mealCost: number;
-    amountInParty: number;
-    givingTip: boolean;
+    mealCost?: number;
+    amountInParty?: number;
     tipAmount?: number;
     userNames?: string;
 }
@@ -10,7 +9,6 @@ export class UserData {
 
     mealCost?: number;
     amountInParty?: number;
-    givingTip?: boolean;
     tipAmount?: number;
     userNames?: string;
 
@@ -18,4 +16,10 @@ export class UserData {
         Object.assign(this, userData);
     }
 
+}
+
+export class RussianData {
+    russianBillTotal?: number;
+    russianTip?: number;
+    russianNames?: string;
 }

@@ -20,6 +20,9 @@ export class LocalStorageService<T> {
         localStorage.clear();
     }
 
+    saveRussianDataToLocalStorage(items: Array<T> | T) {
+        const savedItems = localStorage.setItem(this.key, JSON.stringify(items));
+      }
 
 
 

@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { IUserData } from '../user-data/user.model';
+// import { IUserData } from '../user-data/user.model';
 import { LocalStorageService } from '../localStorageService';
-import { UserData } from '../user-data/user.model';
 import { ToastService } from '../toast/toast.service';
 import { Router } from '@angular/router';
+import { UserData } from '../user-data/user.model';
 
 
-export interface IPerson {
-  russianBillTotal?: number;
-  russianTip?: number;
-  russianNames: string;
+export interface IUserData {
+  mealCost?: number;
+  amountInParty?: number;
+  tipAmount?: number;
+  userNames?: string;
 }
 @Component({
   selector: 'app-russian-page',
@@ -20,16 +21,10 @@ export class RussianPageComponent implements OnInit {
 
   editMode: boolean = false;
   editMode2: boolean = false;
-  persons: Array<IPerson> = [];
-  user: IUserData = {
-    mealCost: null,
-    amountInParty: null,
-    givingTip: null,
-    tipAmount: null,
-    userNames: null
-  };
+  // persons: Array<IPerson> = [];
+  users: Array<UserData> = [];
   localStorageService: LocalStorageService<UserData>;
-  constructor(private router: Router, private toastService: ToastService) { 
+  constructor(private router: Router, private toastService: ToastService) {
     this.localStorageService = new LocalStorageService('userdatas');
   }
 
@@ -37,48 +32,63 @@ export class RussianPageComponent implements OnInit {
   ngOnInit() {
   }
 
-  nextStep(user: IUserData, path: string) {
-    if (user.mealCost === null) {
+  nextStep(users: IUserData, path: string) {
+    if (users.mealCost === null) {
       this.toastService.showToast('warning', 'Please input a cost', 4000)
     } else {
-      if (user.mealCost == 0) {
+      if (users.mealCost == 0) {
         this.toastService.showToast('warning', 'Please input a cost above $0', 4000)
-      } else {
-        this.localStorageService.saveItemsToLocalStorage(user);
-        this.router.navigate(['final-page', user]);
       }
+    }
+    if (users.tipAmount === null) {
+      this.toastService.showToast('warning', 'Please input a tip!', 4000);
+    }
+
+    if (users.userNames === null || users.userNames === '') {
+      this.toastService.showToast('warning', "Please enter a person's name", 4000);
+    } else {
+      console.log("captured data----> ", users);
+      const rand = Math.floor(Math.random() * 4);
+      console.log("random number: " + rand);
+      this.localStorageService.saveItemsToLocalStorage(users);
+      this.router.navigate(['final-page', users]);
     }
 
   }
+
+  previousStep(users: IUserData, path: string) {
+    //  this.localStorageService.saveItemsToLocalStorage(user);
+    this.router.navigate(['home', users]);
+  }
+
   saveItemsToLocalStorage(userdatas: Array<UserData>) {
     return this.localStorageService.saveItemsToLocalStorage(userdatas);
     // const savedData = localStorage.setItem(this.key, JSON.stringify(userdatas));
     // return savedData;
   }
 
-  saveToLocalStorage() {
-    localStorage.setItem('contacts', JSON.stringify(this.user));
+  saveToLocalStorage(key: string, data) {
+    localStorage.setItem(key, JSON.stringify(data));
 
   }
 
   addPerson() {
-    const newPerson: IPerson = {
-      russianNames: null
-    }
-    this.persons.push(newPerson);
-    this.saveToLocalStorage();
+    const user: IUserData = {
+      // mealCost: null,
+      // amountInParty: null,
+      // tipAmount: null,
+      userNames: null
+    };
+    this.users.push(user);
+    this.saveToLocalStorage('russianUsers', this.users);
   }
 
   deletePerson(index: number) {
-    const newPerson: IPerson = {
-      russianNames: null
-    }
-    this.persons.splice(index, 1);
-    this.saveToLocalStorage();
-  }
-
-
-
+    // const newPerson: IUserData = {
+    //   // userNames: null
+    // }
+    this.users.splice(index, 1);
+    this.saveToLocalStorage('russianUsers', this.users);  }
 
   addTip() {
     this.editMode = true;

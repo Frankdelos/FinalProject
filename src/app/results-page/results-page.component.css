@@ -34,3 +34,8 @@
     position: relative;
     top: 30px;
   }
+
+  .btn-format-2 {
+    margin: 40px;
+    float: center;
+  }
