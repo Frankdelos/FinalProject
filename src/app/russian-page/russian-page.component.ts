@@ -26,7 +26,7 @@ export class RussianPageComponent implements OnInit {
     amountInParty: null,
     givingTip: null,
     tipAmount: null,
-    userNames: null
+    userNames: ''
   };
   localStorageService: LocalStorageService<UserData>;
   constructor(private router: Router, private toastService: ToastService) { 
@@ -49,6 +49,8 @@ export class RussianPageComponent implements OnInit {
       }
     }
 
+    
+
   }
   saveItemsToLocalStorage(userdatas: Array<UserData>) {
     return this.localStorageService.saveItemsToLocalStorage(userdatas);
@@ -67,6 +69,10 @@ export class RussianPageComponent implements OnInit {
     }
     this.persons.push(newPerson);
     this.saveToLocalStorage();
+
+    for (let i = 0; i < this.persons.length; i++) {
+      console.log ('i ---> ', i, "this.persons[i]", this.persons[i]);
+    }
   }
 
   deletePerson(index: number) {
