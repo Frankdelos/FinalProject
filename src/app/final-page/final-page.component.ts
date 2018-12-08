@@ -3,7 +3,7 @@ import { IUserData } from '../user-data/user.model';
 import { LocalStorageService } from '../localStorageService';
 import { UserData } from '../user-data/user.model';
 import { ToastService } from '../toast/toast.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 export interface IPerson {
@@ -18,22 +18,21 @@ export interface IPerson {
 })
 export class FinalPageComponent implements OnInit {
 
+  user: any = {};
   localStorageService: LocalStorageService<UserData>;
-  constructor(private router: Router, private toastService: ToastService) { 
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private toastService: ToastService) { 
     this.localStorageService = new LocalStorageService('userdatas');
   }
 
   ngOnInit() {
+    this.activatedRoute.params.subscribe((sss)=> {
+      this.user = sss;
+      console.log('this.user from previous page....', this.user);
+    });
   }
 
   persons: Array<IPerson> = [];
-  user: IUserData = {
-    mealCost: null,
-    amountInParty: null,
-    givingTip: null,
-    tipAmount: null,
-    userNames: ''
-  };
+
 
 
 

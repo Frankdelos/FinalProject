@@ -12,7 +12,7 @@ export class UserData {
     amountInParty?: number;
     givingTip?: boolean;
     tipAmount?: number;
-    userNames?: string;
+    userNames?: any = {};
 
     constructor(userData: IUserData) {
         Object.assign(this, userData);
