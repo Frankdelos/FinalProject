@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-// import { IUserData } from '../user-data/user.model';
+import { IUserData } from '../user-data/user.model';
 import { LocalStorageService } from '../localStorageService';
 import { ToastService } from '../toast/toast.service';
 import { Router } from '@angular/router';
 import { UserData } from '../user-data/user.model';
+
 
 
 export interface IUserData {
@@ -79,7 +80,7 @@ export class RussianPageComponent implements OnInit {
       // tipAmount: null,
       userNames: null
     };
-    this.users.push(user);
+    // this.users.push(user);
     this.saveToLocalStorage('russianUsers', this.users);
   }
 
