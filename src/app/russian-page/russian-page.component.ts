@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { IUserData } from '../user-data/user.model';
 import { LocalStorageService } from '../localStorageService';
 import { UserData } from '../user-data/user.model';
+import { Router } from '@angular/router';
+
 
 
 export interface IPerson {
@@ -26,7 +28,7 @@ export class RussianPageComponent implements OnInit {
       tipAmount: null, 
       userNames: null };
   localStorageService: LocalStorageService<UserData>;
-  constructor() { }
+  constructor(private router: Router,) { }
 
   ngOnInit() {
   }
@@ -50,6 +52,11 @@ export class RussianPageComponent implements OnInit {
   addTip(){
     this.editMode = true;
     console.log('from addTip');
+  }
+
+  returnHome(){
+    this.router.navigate(['home']);
+
   }
 
 }
