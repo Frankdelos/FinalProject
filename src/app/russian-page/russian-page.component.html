@@ -49,17 +49,17 @@
           <label class="form-check-label" for="inlineRadio3">20%</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input font" type="radio" name="inlineRadioOptions" value="user.tipAmount" (click)="addTip()">
+          <input class="form-check-input font" type="radio" name="inlineRadioOptions" value="users.tipAmount" (click)="addTip()">
           <label class="form-check-label" for="exampleCheck1">Check me out</label>
           <div *ngIf="editMode == true">
-            <input [(ngModel)]="user.tipAmount" name="first" type="text" class="form-control text-box font"
+            <input [(ngModel)]="users.tipAmount" name="first" type="text" class="form-control text-box font"
               placeholder="">
           </div>
         </div>
 
         <div class="form-group" *ngFor="let user of users; let i = index" >
-            <label for="exampleInputPassword1" *ngIf="userData.editing" >Party Names</label>
-            <input [(ngModel)]="userData.userNames" name="first" type="text" class="form-control" placeholder="Name"
+            <label for="exampleInputPassword1" *ngIf="users.editing" >Party Names</label>
+            <input [(ngModel)]="users.userNames" name="first" type="text" class="form-control" placeholder="Name"
               aria-label="last" aria-describedby="basic-addon1">
             </div>
             
