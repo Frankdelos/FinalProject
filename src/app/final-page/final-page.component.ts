@@ -16,7 +16,13 @@ export class FinalPageComponent implements OnInit {
 
   userParams = '';
   currentUser: IUserData;
-  users: Array<IUserData> = [];
+  users: IUserData = {
+    mealCost: null,
+    tipAmount: null,
+    userNames: null
+  };
+  
+    
   localStorageService: LocalStorageService<UserData>;
 
   constructor(private router: Router, private toastService: ToastService, private activatedRoute: ActivatedRoute) {
@@ -24,7 +30,13 @@ export class FinalPageComponent implements OnInit {
   }
 
   async ngOnInit() {
-  
+    this.activatedRoute.params.subscribe((data: IUserData) => {
+      console.log("data being transfered: ", data);
+      this.currentUser = data;
+      this.users.mealCost = this.currentUser.mealCost;
+      this.users.tipAmount = this.currentUser.tipAmount;
+      this.users.userNames= this.currentUser.userNames;
+    });
   }
 
   nextStep(users: IUserData, path: string) {

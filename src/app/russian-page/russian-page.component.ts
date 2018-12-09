@@ -4,6 +4,7 @@ import { LocalStorageService } from '../localStorageService';
 import { ToastService } from '../toast/toast.service';
 import { Router } from '@angular/router';
 import { UserData } from '../user-data/user.model';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -21,16 +22,23 @@ export interface IUserData {
 export class RussianPageComponent implements OnInit {
 
   editMode: boolean = false;
-  editMode2: boolean = false;
-  // persons: Array<IPerson> = [];
+  userParams = '';
+  currentUser: IUserData;
   users: Array<UserData> = [];
   localStorageService: LocalStorageService<UserData>;
-  constructor(private router: Router, private toastService: ToastService) {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private toastService: ToastService) {
     this.localStorageService = new LocalStorageService('userdatas');
   }
 
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.activatedRoute.params.subscribe((data: IUserData) => {
+      console.log("data being transfered: ", data);
+      this.currentUser = data;
+      this.users.mealCost = this.currentUser.mealCost;
+      this.users.tipAmount = this.currentUser.tipAmount;
+      this.users.userNames = this.currentUser.userNames;
+    });
   }
 
   nextStep(users: IUserData, path: string) {
