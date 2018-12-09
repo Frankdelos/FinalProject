@@ -85,3 +85,29 @@ table{
 .font{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+
+.summaryClass{
+  font-size: 26pt;
+  text-shadow: 2px 2.5px black;
+  margin-top: 50px;
+
+}
+
+.stepClass {
+  font-size: 48pt;
+  text-shadow: 2px 2.5px black;
+}
+
+.headDescription{
+  font-size: 3em;
+  text-decoration: underline;
+  text-shadow: 2px 2.5px black;
+
+}
+
+.descriptionClass{
+  font-size: 1.75em;
+  text-shadow: 2px 2.5px black;
+
+}
