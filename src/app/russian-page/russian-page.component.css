@@ -13,3 +13,11 @@
     width: 300px;
     margin: auto;
 }
+.russian-input2 {
+display: flex;
+align-items: center;
+justify-content: center;   
+}
+.button-class{
+    background-color: #01579B;
+}
