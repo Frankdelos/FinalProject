@@ -51,7 +51,7 @@ export class RussianPageComponent implements OnInit {
       console.log("captured data----> ", users);
       const rand = Math.floor(Math.random() * this.users.length);
       console.log("random number: " + rand);
-      this.localStorageService.saveItemsToLocalStorage(users);
+      this.saveItemsToLocalStorage(this.users);
       this.router.navigate(['final-page', users]);
     }
 
@@ -75,6 +75,8 @@ export class RussianPageComponent implements OnInit {
 
   addPerson() {
     const user: IUserData = {
+      mealCost: null,
+      tipAmount: null,
       userNames: null
     };
     this.users.push(user);
