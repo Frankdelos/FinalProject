@@ -75,13 +75,10 @@ export class RussianPageComponent implements OnInit {
 
   addPerson() {
     const user: IUserData = {
-      // mealCost: null,
-      // amountInParty: null,
-      // tipAmount: null,
       userNames: null
     };
     this.users.push(user);
-    this.saveToLocalStorage('russianUsers', this.users);
+    this.saveToLocalStorage('userNames', this.users);
   }
 
   deletePerson(index: number) {
