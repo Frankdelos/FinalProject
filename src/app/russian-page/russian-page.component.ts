@@ -80,7 +80,7 @@ export class RussianPageComponent implements OnInit {
       // tipAmount: null,
       userNames: null
     };
-    // this.users.push(user);
+    this.users.push(user);
     this.saveToLocalStorage('russianUsers', this.users);
   }
 
@@ -95,5 +95,6 @@ export class RussianPageComponent implements OnInit {
     this.editMode = true;
     console.log('from addTip');
   }
+  
 
 }
