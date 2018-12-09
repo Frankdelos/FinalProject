@@ -62,13 +62,17 @@
 
         <h4>People in Party:</h4>
         <div class="input-group mb-3 russian-input">
-          <div >
+          <div>
             <button type="button" class="btn btn-success btn-format-home font" (click)="addPerson()">Add</button>
             <button type="button" class="btn btn-danger btn-format-home font">Delete</button>
-            <div class="input-group-append">
-            </div>
-            <input *ngFor="let user of users; let i = index" [(ngModel)]="users.userNames" type="text" class="form-control" placeholder="Party Names" aria-label="Recipient's username"
-              aria-describedby="basic-addon2">
+
+            
+            <div class="input-group" *ngFor="let user of users; let i = index">
+              <input [(ngModel)]="user.userNames" type="text" class="form-control"
+              placeholder="Party Names" aria-label="Recipient's username" aria-describedby="basic-addon2">
+              <!-- <button type="button" class="btn btn-primary btn-format-home font" (click)="savePerson()">Save</button></div> -->
+            
+
 
           </div>
 
