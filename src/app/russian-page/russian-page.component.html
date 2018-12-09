@@ -23,65 +23,63 @@
   <div class="center-text column-right-1 font">
     <div>
       <h2>Russian Roulette</h2>
-      <form>
-        <!-- BILL INPUT -->
-        <div class="form-group">
-          <label for="exampleInputEmail1">Bill Total</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="$">
-          <small id="emailHelp" class="form-text text-muted">Enter total meal cost.</small>
+      <!-- BILL INPUT -->
+      <h4>Total Bill:</h4>
+      <div class="input-group mb-3 russian-input">
+        <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
         </div>
-        <!-- TIP INPUT -->
-        <div class="form-group">
-          <label for="exampleInputPassword1">Tip Amount</label>
-        </div>
+        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        
+      </div>
+
+      <!-- TIP INPUT -->
+      <div class="align-center">
+        <h4>Tip Amount:</h4>
         <div class="form-check form-check-inline">
-          <input [(ngModel)]="users.tipAmount" class="form-check-input font" type="radio" name="inlineRadioOptions"
+          <input [(ngModel)]="user.tipAmount" class="form-check-input font" type="radio" name="inlineRadioOptions" id="inlineRadio1"
             value="10">
           <label class="form-check-label" for="inlineRadio1">10%</label>
         </div>
         <div class="form-check form-check-inline font">
-          <input [(ngModel)]="users.tipAmount" class="form-check-input" type="radio" name="inlineRadioOptions" value="15">
+          <input [(ngModel)]="user.tipAmount" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+            value="15">
           <label class="form-check-label" for="inlineRadio2">15%</label>
         </div>
         <div class="form-check form-check-inline">
-          <input [(ngModel)]="users.tipAmount" class="form-check-input font" type="radio" name="inlineRadioOptions"
+          <input [(ngModel)]="user.tipAmount" class="form-check-input font" type="radio" name="inlineRadioOptions" id="inlineRadio3"
             value="20">
           <label class="form-check-label" for="inlineRadio3">20%</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input font" type="radio" name="inlineRadioOptions" value="user.tipAmount" (click)="addTip()">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          <input class="form-check-input font" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="user.tipAmount"
+            (click)="addTip()">
+          <label class="form-check-label">Custom tip</label>
           <div *ngIf="editMode == true">
-            <input [(ngModel)]="user.tipAmount" name="first" type="text" class="form-control text-box font"
-              placeholder="">
+            <input [(ngModel)]="user.tipAmount" type="text" class="form-control text-box font" placeholder="">
           </div>
         </div>
 
-        <div class="form-group" *ngFor="let user of users; let i = index" >
-            <label for="exampleInputPassword1" *ngIf="userData.editing" >Party Names</label>
-            <input [(ngModel)]="userData.userNames" name="first" type="text" class="form-control" placeholder="Name"
-              aria-label="last" aria-describedby="basic-addon1">
+        <h4>People in Party:</h4>
+        <div class="input-group mb-3 russian-input">
+            <input type="text" class="form-control" placeholder="Party Names" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <button type="button" class="btn btn-success btn-format-home font" >Add</button>
+            <button type="button" class="btn btn-danger btn-format-home font" >Delete</button>
+            <div class="input-group-append">
             </div>
-            
-        <div class="form-group">
-          <button mat-raised-button color="primary" (click)="addPerson()">Add Person</button>
-          <!-- <button mat-raised-button color="primary" (click)="savePerson()">Save</button> -->
-          <button mat-raised-button color="warn" (click)="deletePerson()">Delete</button>
-        </div>
-
-      </form>
+          </div>
 
 
-      <button type="button" class="btn btn-secondary btn-format" (click)="nextStep(users)">
-        <i class="material-icons">
-          chevron_right
-        </i>
-      </button>
-      <button type="button" class="btn btn-secondary btn-format" (click)="previousStep(users)">
-        <i class="material-icons">
-          chevron_left
-        </i>
-      </button>
+        <button type="button" class="btn btn-secondary btn-format" (click)="nextStep(users)">
+          <i class="material-icons">
+            chevron_right
+          </i>
+        </button>
+        <button type="button" class="btn btn-secondary btn-format" (click)="previousStep(users)">
+          <i class="material-icons">
+            chevron_left
+          </i>
+        </button>
+      </div>
     </div>
   </div>
-</div>
