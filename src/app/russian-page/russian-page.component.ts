@@ -49,7 +49,7 @@ export class RussianPageComponent implements OnInit {
       this.toastService.showToast('warning', "Please enter a person's name", 4000);
     } else {
       console.log("captured data----> ", users);
-      const rand = Math.floor(Math.random() * 4);
+      const rand = Math.floor(Math.random() * this.users.length);
       console.log("random number: " + rand);
       this.localStorageService.saveItemsToLocalStorage(users);
       this.router.navigate(['final-page', users]);
