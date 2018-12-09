@@ -3,3 +3,24 @@
      width: 50px;
      margin: 11px;
    }
+
+   .column-left {
+    color: white;
+    background-color: #01579B;
+    width: 33vw;
+    padding: 10px;
+    height: 100vh;
+    /* background-image: url(https://cdn.24.co.za/files/Cms/General/d/7754/9eb910c342bb489f84a29d5d2672205d.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left top; */
+
+}
+
+.column-right {
+    color: white;
+    background-color: #81D4FA;
+    width: 66vw;
+    padding: 10px;
+    height: 100vh;
+}

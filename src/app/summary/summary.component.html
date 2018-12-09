@@ -13,18 +13,18 @@
 <div class="split-grid">
 
   <div class="center-text column-left font">
-    <h2>Process Description</h2>
-    <div class="text-grid">The final step, the summary. Double check the info provided on the right to make sure
+    <h2 class="headDescription">Process Description:</h2>
+    <div class="text-grid descriptionClass">The final step, the summary. Double check the info provided on the right to make sure
       everything was entered correctly. If there is an error, please use the back arrow on the right to go back a step to fix
       the mistake. If not, Move right along to the results!</div>
   </div>
 
   <div class="center-text column-right font">
     <div>
-      <h2>Step 4 of 4: Summary</h2>
-      <br> Bill total: ${{user.mealCost}}
-      <br> Party total: {{user.amountInParty}}
-      <br> Tip percentage: {{user.tipAmount}}%
+      <h2 class="stepClass">Step 4 of 4: Summary</h2>
+      <div class="summaryClass"> Bill total: ${{user.mealCost}}</div> 
+      <div class="summaryClass"> Party total: {{user.amountInParty}}</div> 
+      <div class="summaryClass"> Tip percentage: {{user.tipAmount}}%</div> 
 
     </div>
     <button type="button" class="btn btn-secondary btn-format" (click)="nextStep(user)">
