@@ -29,33 +29,33 @@
         <div class="input-group-prepend">
           <span class="input-group-text">$</span>
         </div>
-        <input [(ngModel)]="users.mealCost" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        <input [(ngModel)]="user.mealCost" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
       </div>
 
       <!-- TIP INPUT -->
       <div class="align-center">
         <h4>Tip Amount:</h4>
         <div class="form-check form-check-inline">
-          <input [(ngModel)]="users.tipAmount" class="form-check-input font" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+          <input [(ngModel)]="user.tipAmount" class="form-check-input font" type="radio" name="inlineRadioOptions" id="inlineRadio1"
             value="10">
           <label class="form-check-label" for="inlineRadio1">10%</label>
         </div>
         <div class="form-check form-check-inline font">
-          <input [(ngModel)]="users.tipAmount" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+          <input [(ngModel)]="user.tipAmount" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
             value="15">
           <label class="form-check-label" for="inlineRadio2">15%</label>
         </div>
         <div class="form-check form-check-inline">
-          <input [(ngModel)]="users.tipAmount" class="form-check-input font" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+          <input [(ngModel)]="user.tipAmount" class="form-check-input font" type="radio" name="inlineRadioOptions" id="inlineRadio3"
             value="20">
           <label class="form-check-label" for="inlineRadio3">20%</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input font" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="users.tipAmount"
+          <input class="form-check-input font" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="user.tipAmount"
             (click)="addTip()">
           <label class="form-check-label">Custom tip</label>
           <div *ngIf="editMode == true">
-            <input [(ngModel)]="users.tipAmount" type="text" class="form-control text-box font" placeholder="">
+            <input [(ngModel)]="user.tipAmount" type="text" class="form-control text-box font" placeholder="">
           </div>
         </div>
 
@@ -63,11 +63,15 @@
         <div class="input-group mb-3 russian-input">
           <div>
             <button type="button" class="btn btn-success btn-format-home font" (click)="addPerson()">Add</button>
-            <button type="button" class="btn btn-danger btn-format-home font " (click)="deletePerson()">Delete</button>
-            <div class="input-group-append">
-            </div>
-            <input *ngFor="let user of users; let i = index" [(ngModel)]="users.userNames" type="text" class="form-control"
+            <button type="button" class="btn btn-danger btn-format-home font">Delete</button>
+
+            
+            <div class="input-group" *ngFor="let user of users; let i = index">
+              <input [(ngModel)]="user.userNames" type="text" class="form-control"
               placeholder="Party Names" aria-label="Recipient's username" aria-describedby="basic-addon2">
+              <!-- <button type="button" class="btn btn-primary btn-format-home font" (click)="savePerson()">Save</button></div> -->
+            
+
 
           </div>
 

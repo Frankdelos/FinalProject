@@ -51,7 +51,7 @@ export class RussianPageComponent implements OnInit {
       console.log("captured data----> ", users);
       const rand = Math.floor(Math.random() * this.users.length);
       console.log("random number: " + rand);
-      this.saveItemsToLocalStorage(this.users);
+      this.localStorageService.saveItemsToLocalStorage(users);
       this.router.navigate(['final-page', users]);
     }
 
@@ -73,6 +73,11 @@ export class RussianPageComponent implements OnInit {
 
   }
 
+  savePerson(userdatas: Array<UserData>) {
+    console.log('from savePerson');
+    return this.localStorageService.saveItemsToLocalStorage(userdatas);
+
+  }
   addPerson() {
     const user: IUserData = {
       mealCost: null,
@@ -80,7 +85,7 @@ export class RussianPageComponent implements OnInit {
       userNames: null
     };
     this.users.push(user);
-    this.saveToLocalStorage('userNames', this.users);
+    this.saveToLocalStorage('russianUsers', this.users);
   }
 
   deletePerson(index: number) {
@@ -88,12 +93,13 @@ export class RussianPageComponent implements OnInit {
     //   // userNames: null
     // }
     this.users.splice(index, 1);
-    this.saveToLocalStorage('russianUsers', this.users);  }
+    this.saveToLocalStorage('russianUsers', this.users);
+  }
 
   addTip() {
     this.editMode = true;
     console.log('from addTip');
   }
-  
+
 
 }
