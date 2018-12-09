@@ -1,0 +1,48 @@
+.summaryClass{
+    font-size: 26pt;
+    text-shadow: 2px 2.5px black;
+    margin-top: 50px;
+
+}
+
+.stepClass {
+    font-size: 48pt;
+    text-shadow: 2px 2.5px black;
+}
+
+.headDescription{
+    font-size: 3em;
+    text-decoration: underline;
+    text-shadow: 2px 2.5px black;
+
+}
+
+.descriptionClass{
+    font-size: 1.75em;
+    text-shadow: 2px 2.5px black;
+
+}
+
+
+
+
+.column-left {
+    color: white;
+    background-color: #01579B;
+    width: 33vw;
+    padding: 10px;
+    height: 100vh;
+    /* background-image: url(https://cdn.24.co.za/files/Cms/General/d/7754/9eb910c342bb489f84a29d5d2672205d.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left top; */
+
+}
+
+.column-right {
+    color: white;
+    background-color: #81D4FA;
+    width: 66vw;
+    padding: 10px;
+    height: 100vh;
+}
