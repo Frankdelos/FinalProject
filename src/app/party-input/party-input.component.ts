@@ -43,15 +43,14 @@ export class PartyInputComponent implements OnInit {
   nextStep(user: IUserData, path: string) {
     if (user.amountInParty === null) {
       this.toastService.showToast('warning', 'Please input a party amount!', 4000);
+    } else if (isNaN(user.amountInParty)) {
+      this.toastService.showToast('warning', 'Please input numbers only!', 4000);
+    } else if (user.amountInParty == 0) {
+      this.toastService.showToast('warning', 'Please input a party amount above 0!', 4000);
     } else {
-      if (user.amountInParty == 0) {
-        this.toastService.showToast('warning', 'Please input a party amount above 0!', 4000);
-      } else {
-        this.localStorageService.saveItemsToLocalStorage(user);
-        this.router.navigate(['tip-input', user]);
-      }
+      this.localStorageService.saveItemsToLocalStorage(user);
+      this.router.navigate(['tip-input', user]);
     }
-
   }
 
   previousStep(user: IUserData, path: string) {
