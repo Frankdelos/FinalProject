@@ -38,22 +38,14 @@ export class SummaryComponent implements OnInit {
     });
   }
 
-  // goToPage(path: string) {
-  //   console.log('from goToPage path: ', path);
-  //   this.router.navigate([path]);
-  // }
 
   nextStep(user: IUserData, path: string) {
     this.router.navigate(['results-page', user]);
   }
 
   previousStep(user: IUserData, path: string) {
-    //  this.localStorageService.saveItemsToLocalStorage(user);
      this.router.navigate(['tip-input',user]);
   }
-
-
-  //Calculations
   
 
 }

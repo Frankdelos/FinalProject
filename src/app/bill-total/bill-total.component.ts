@@ -20,11 +20,6 @@ export class BillTotalComponent implements OnInit {
   }
 
 
-  // goToPage(path: string) {
-  //   console.log('from goToPage path: ', path);
-  //   this.router.navigate([path]);
-  // }
-
   ngOnInit() {
   }
 
@@ -42,20 +37,15 @@ export class BillTotalComponent implements OnInit {
   }
 
   previousStep(user: IUserData, path: string) {
-    //  this.localStorageService.saveItemsToLocalStorage(user);
     this.router.navigate(['']);
   }
 
   saveItemsToLocalStorage(userdatas: Array<UserData>) {
     return this.localStorageService.saveItemsToLocalStorage(userdatas);
-    // const savedData = localStorage.setItem(this.key, JSON.stringify(userdatas));
-    // return savedData;
   }
 
   getItemsFromLocalStorage() {
     return this.localStorageService.getItemsFromLocalStorage();
-    // const savedData = JSON.parse(localStorage.getItem(this.key));
-    // return savedData;
   }
 
 

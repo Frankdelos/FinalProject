@@ -15,12 +15,9 @@ export class FinalPageComponent implements OnInit {
 
 
   userParams = '';
+  rand: number;
   currentUser: IUserData;
   users: Array<UserData> = [];
-    // mealCost: null,
-    // tipAmount: null,
-    // userNames: null
-  // };
   
     
   localStorageService: LocalStorageService<UserData>;
@@ -33,10 +30,9 @@ export class FinalPageComponent implements OnInit {
     this.activatedRoute.params.subscribe((data: IUserData) => {
       console.log("data being transfered: ", data);
       this.currentUser = data;
-    //   this.users.mealCost = this.currentUser.mealCost;
-    //   this.users.tipAmount = this.currentUser.tipAmount;
-    //   this.users.userNames= this.currentUser.userNames;
-    // });
+      this.users = this.localStorageService.getItemsFromLocalStorage();
+      this.rand = Math.floor(Math.random() * this.users.length);
+      console.log("Newest random number --> ", this.rand);
     });
   }
 
@@ -46,12 +42,7 @@ export class FinalPageComponent implements OnInit {
   }
 
 
-
-
-
-
   previousStep(path: string) {
-    //  this.localStorageService.saveItemsToLocalStorage(user);
     this.router.navigate(['russian-page']);
   }
 
