@@ -21,7 +21,8 @@ export class UserData {
 }
 
 export class RussianData {
-    russianBillTotal?: number;
-    russianTip?: number;
-    russianNames?: string;
+    mealCost?: number;
+    tipAmount?: number;
+    userNames?: string;
+    russianWinner?: number;
 }
