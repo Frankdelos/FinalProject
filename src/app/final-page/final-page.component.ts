@@ -22,8 +22,8 @@ export class FinalPageComponent implements OnInit {
   currentUser: IUserData;
   users: Array<UserData> = [];
 
-  
-    
+
+
   localStorageService: LocalStorageService<UserData>;
 
 
@@ -52,12 +52,11 @@ export class FinalPageComponent implements OnInit {
   }
 
 
-  randTest(){
+  randTest() {
     console.log('random number is: ', this.rand);
     this.randomWinner.russianWinner = JSON.stringify(this.users[this.rand]);
     console.log(this.users[this.rand]);
     return this.randomWinner.russianWinner;
-    
   }
 
 
