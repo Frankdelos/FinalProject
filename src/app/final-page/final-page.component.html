@@ -23,15 +23,9 @@
   <div class="center-text column-right-1 font">
     <div>
       <h2>The lucky winner is...</h2>
-      <h3>TEST</h3>
-      <div>{{userNames}}</div>
+      <div>{{randPerson.user}}</div>
 
-      <button type="button" class="btn btn-secondary btn-format" (click)="randTest(user)">
-        <i class="material-icons">
-          chevron_left
-        </i>
-      </button>
-
+      <button type="button" class="btn btn-primary " (click)="randTest(user)">Reveal Person</button>
 
       
       <div>
