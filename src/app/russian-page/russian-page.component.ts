@@ -36,24 +36,41 @@ export class RussianPageComponent implements OnInit {
 
   nextStep(users: IUserData, path: string) {
     if (users.mealCost === null) {
-      this.toastService.showToast('warning', 'Please input a cost', 4000)
-    } else {
-      if (users.mealCost == 0) {
-        this.toastService.showToast('warning', 'Please input a cost above $0', 4000)
-      }
-    }
-    if (users.tipAmount === null) {
+      this.toastService.showToast('warning', 'Please input a cost', 4000);
+    } else if (users.mealCost == 0) {
+      this.toastService.showToast('warning', 'Please input a cost above $0', 4000);
+    } else if (isNaN(users.mealCost)) {
+      this.toastService.showToast('warning', 'Please input numbers only!', 4000);
+    } else if (users.tipAmount === null) {
       this.toastService.showToast('warning', 'Please input a tip!', 4000);
-    }
-
-    if (users.userNames === null || users.userNames === '') {
+    } else if (users.userNames === null || users.userNames === '') {
       this.toastService.showToast('warning', "Please enter a person's name", 4000);
     } else {
       this.localStorageService.saveItemsToLocalStorage(users);
       this.router.navigate(['final-page', users]);
     }
-
   }
+    // if (users.mealCost === null) {
+    //   this.toastService.showToast('warning', 'Please input a cost', 4000)
+    // } else {
+    //   if (users.mealCost == 0) {
+    //     this.toastService.showToast('warning', 'Please input a cost above $0', 4000)
+    //   }
+    // }
+    // if (users.tipAmount === null) {
+    //   this.toastService.showToast('warning', 'Please input a tip!', 4000);
+    // }
+
+    // if (users.userNames === null || users.userNames === '') {
+    //   this.toastService.showToast('warning', "Please enter a person's name", 4000);
+    // } else {
+    //   const rand = Math.floor(Math.random() * this.users.length);
+    //   console.log("random number: " + rand);
+    //   this.localStorageService.saveItemsToLocalStorage(users);
+    //   this.router.navigate(['final-page', users]);
+    // }
+
+  
 
   previousStep(users: IUserData, path: string) {
     this.router.navigate(['home', users]);
