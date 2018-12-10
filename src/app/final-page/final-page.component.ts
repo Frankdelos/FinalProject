@@ -5,6 +5,7 @@ import { ToastService } from '../toast/toast.service';
 import { Router } from '@angular/router';
 import { UserData } from '../user-data/user.model';
 import { ActivatedRoute } from '@angular/router';
+import { RussianData } from '../user-data/user.model';
 
 @Component({
   selector: 'app-final-page',
@@ -13,7 +14,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FinalPageComponent implements OnInit {
 
-
+  randomWinner: RussianData = {
+    russianWinner: null
+  };
   userParams = '';
   rand: number;
   currentUser: IUserData;
@@ -51,10 +54,10 @@ export class FinalPageComponent implements OnInit {
 
   randTest(){
     console.log('random number is: ', this.rand);
-    var randomPerson = this.users[this.rand];
+    this.randomWinner.russianWinner = JSON.stringify(this.users[this.rand]);
     console.log(this.users[this.rand]);
+    return this.randomWinner.russianWinner;
     
-
   }
 
 
