@@ -18,9 +18,11 @@ export class FinalPageComponent implements OnInit {
   rand: number;
   currentUser: IUserData;
   users: Array<UserData> = [];
+
   
     
   localStorageService: LocalStorageService<UserData>;
+
 
   constructor(private router: Router, private toastService: ToastService, private activatedRoute: ActivatedRoute) {
     this.localStorageService = new LocalStorageService('userdatas');
@@ -44,6 +46,15 @@ export class FinalPageComponent implements OnInit {
 
   previousStep(path: string) {
     this.router.navigate(['russian-page']);
+  }
+
+
+  randTest(){
+    console.log('random number is: ', this.rand);
+    var randomPerson = this.users[this.rand];
+    console.log(this.users[this.rand]);
+    
+
   }
 
 
