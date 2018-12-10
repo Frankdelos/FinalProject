@@ -14,7 +14,9 @@ import { RussianData } from '../user-data/user.model';
 })
 export class FinalPageComponent implements OnInit {
 
-  randomWinner: RussianData;
+  randomWinner: RussianData = {
+    russianWinner: null
+  };
   userParams = '';
   rand: number;
   currentUser: IUserData;
@@ -52,8 +54,9 @@ export class FinalPageComponent implements OnInit {
 
   randTest(){
     console.log('random number is: ', this.rand);
-    this.randomWinner = this.users[this.rand];
+    this.randomWinner.russianWinner = JSON.stringify(this.users[this.rand]);
     console.log(this.users[this.rand]);
+    return this.randomWinner.russianWinner;
     
   }
 
