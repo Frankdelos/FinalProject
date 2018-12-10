@@ -30,7 +30,6 @@ export class RussianPageComponent implements OnInit {
     this.localStorageService = new LocalStorageService('userdatas');
   }
 
-
   async ngOnInit() {
   }
 
