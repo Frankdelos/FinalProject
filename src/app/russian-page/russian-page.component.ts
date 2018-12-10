@@ -94,12 +94,12 @@ export class RussianPageComponent implements OnInit {
       userNames: null
     };
     this.users.push(user);
-    this.saveToLocalStorage('russianUsers', this.users);
+    this.saveToLocalStorage('userdatas', this.users);
   }
 
   deletePerson(index: number) {
     this.users.splice(index, 1);
-    this.saveToLocalStorage('russianUsers', this.users);
+    this.saveToLocalStorage('userdatas', this.users);
   }
 
   addTip() {
