@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <!-- <i class="material-icons">keyboard_backspace</i> -->
-  <a class="navbar-brand font" >Results</a>
+  <a class="navbar-brand font">Results</a>
   <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -9,8 +9,8 @@
 
 <div class="results-split-grid">
   <div class="center-text results-column-left font">
-    <h2>Process Description</h2>
-    <div class="text-grid font">
+    <h2 class="headDescription">Process Description</h2>
+    <div class="text-grid font descriptionClass">
       Final Page! This results page breaks down how
       much each person owes given the information you entered.
       If you want to have a bit more fun, try the Russian Roullete portion.
@@ -18,20 +18,20 @@
   </div>
 
   <div class="center-text results-column-right font">
-     <h2>Your bill summary</h2>
-     <div class="container">
-       <div class="align-text font">
-      Bill: ${{user.mealCost}}
-      <br>People: {{user.amountInParty}}
-      <br>Tip: {{user.tipAmount}}% (${{convertTipToDecimal()}})
-      <br>Total: ${{calculateTotalWithTip()}}
-      <br>Each: ${{calculateBillSplit()}}
+    <h2 class="stepClass">Your bill summary</h2>
+    <div class="container">
+      <div class="align-text font ">
+        <div class="percentClass">Bill: ${{user.mealCost}}</div>
+        <div class="percentClass">People: {{user.amountInParty}}</div>
+        <div class="percentClass">Tip: {{user.tipAmount}}% (${{convertTipToDecimal()}})</div>
+        <div class="percentClass">Total: ${{calculateTotalWithTip()}}</div>
+        <div class="percentClass">Each: ${{calculateBillSplit()}}</div>
+      </div>
     </div>
-     </div>
-    
+
     <div>
-       <button type="button" class="btn btn-secondary font btn-format-2" (click)="goToPage('')">Return Home</button>
-     </div>
-  </div> 
-  
+      <button type="button" class="btn btn-secondary font btn-format-2" (click)="goToPage('')">Return Home</button>
+    </div>
+  </div>
+
 </div>
