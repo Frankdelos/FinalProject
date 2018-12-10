@@ -25,3 +25,19 @@ justify-content: center;
 .btn-group {
     margin: 5px;
 }
+
+.column-right-1 {
+    color: black;
+    background-color: #FDD835;
+    width: 66vw;
+    padding: 10px;
+    height: 100vh;
+  }
+
+  .column-left-1 {
+    background-color: #B71C1C;
+    color: white;
+    width: 33vw;
+    padding: 10px;
+    height: 100vh;
+  }
