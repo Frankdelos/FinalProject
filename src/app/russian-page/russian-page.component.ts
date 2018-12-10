@@ -32,13 +32,6 @@ export class RussianPageComponent implements OnInit {
 
 
   async ngOnInit() {
-    this.activatedRoute.params.subscribe((data: IUserData) => {
-      console.log("data being transfered: ", data);
-      this.currentUser = data;
-      this.users.mealCost = this.currentUser.mealCost;
-      this.users.tipAmount = this.currentUser.tipAmount;
-      this.users.userNames = this.currentUser.userNames;
-    });
   }
 
   nextStep(users: IUserData, path: string) {
@@ -56,8 +49,7 @@ export class RussianPageComponent implements OnInit {
     if (users.userNames === null || users.userNames === '') {
       this.toastService.showToast('warning', "Please enter a person's name", 4000);
     } else {
-      console.log("captured data----> ", users);
-      const rand = Math.floor(Math.random() * 4);
+      const rand = Math.floor(Math.random() * this.users.length);
       console.log("random number: " + rand);
       this.localStorageService.saveItemsToLocalStorage(users);
       this.router.navigate(['final-page', users]);
@@ -66,14 +58,11 @@ export class RussianPageComponent implements OnInit {
   }
 
   previousStep(users: IUserData, path: string) {
-    //  this.localStorageService.saveItemsToLocalStorage(user);
     this.router.navigate(['home', users]);
   }
 
   saveItemsToLocalStorage(userdatas: Array<UserData>) {
     return this.localStorageService.saveItemsToLocalStorage(userdatas);
-    // const savedData = localStorage.setItem(this.key, JSON.stringify(userdatas));
-    // return savedData;
   }
 
   saveToLocalStorage(key: string, data) {
@@ -95,16 +84,12 @@ export class RussianPageComponent implements OnInit {
   }
 
   deletePerson(index: number) {
-    // const newPerson: IUserData = {
-    //   // userNames: null
-    // }
     this.users.splice(index, 1);
     this.saveToLocalStorage('russianUsers', this.users);
   }
 
   addTip() {
     this.editMode = true;
-    console.log('from addTip');
   }
 
 

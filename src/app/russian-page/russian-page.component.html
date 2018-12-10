@@ -30,7 +30,6 @@
           <span class="input-group-text">$</span>
         </div>
         <input [(ngModel)]="users.mealCost" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-
       </div>
 
       <!-- TIP INPUT -->
@@ -64,7 +63,7 @@
         <div class="input-group russian-input2">
           <div>
             <button type="button" class="btn btn-success btn-format-home font" (click)="addPerson()">Add</button>
-            <button type="button" class="btn btn-danger btn-format-home font">Delete</button>
+            <button type="button" class="btn btn-danger btn-format-home font" (click)="deletePerson()">Delete</button>
             <div class="input-group" *ngFor="let user of users; let i = index">
               <input [(ngModel)]="user.userNames" type="text" class="form-control" placeholder="Party Names" aria-label="Recipient's username"
                 aria-describedby="basic-addon2">

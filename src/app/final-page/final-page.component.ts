@@ -16,11 +16,11 @@ export class FinalPageComponent implements OnInit {
 
   userParams = '';
   currentUser: IUserData;
-  users: IUserData = {
-    mealCost: null,
-    tipAmount: null,
-    userNames: null
-  };
+  users: Array<UserData> = [];
+    // mealCost: null,
+    // tipAmount: null,
+    // userNames: null
+  // };
   
     
   localStorageService: LocalStorageService<UserData>;
@@ -33,9 +33,10 @@ export class FinalPageComponent implements OnInit {
     this.activatedRoute.params.subscribe((data: IUserData) => {
       console.log("data being transfered: ", data);
       this.currentUser = data;
-      this.users.mealCost = this.currentUser.mealCost;
-      this.users.tipAmount = this.currentUser.tipAmount;
-      this.users.userNames= this.currentUser.userNames;
+    //   this.users.mealCost = this.currentUser.mealCost;
+    //   this.users.tipAmount = this.currentUser.tipAmount;
+    //   this.users.userNames= this.currentUser.userNames;
+    // });
     });
   }
 
