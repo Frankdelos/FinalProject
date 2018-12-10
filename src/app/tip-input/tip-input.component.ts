@@ -28,10 +28,6 @@ export class TipInputComponent implements OnInit {
     this.localStorageService = new LocalStorageService('userdatas');
   }
 
-  // goToPage(path: string) {
-  //   console.log('from goToPage path: ', path);
-  //   this.router.navigate([path]);
-  // }
 
   async ngOnInit() {
     this.activatedRoute.params.subscribe((data: IUserData) => {
@@ -56,23 +52,18 @@ export class TipInputComponent implements OnInit {
   }
 
   previousStep(user: IUserData, path: string) {
-    //  this.localStorageService.saveItemsToLocalStorage(user);
-     this.router.navigate(['party-input',user]);
+    this.router.navigate(['party-input', user]);
   }
 
   saveItemsToLocalStorage(userdatas: Array<UserData>) {
     return this.localStorageService.saveItemsToLocalStorage(userdatas);
-    // const savedData = localStorage.setItem(this.key, JSON.stringify(userdatas));
-    // return savedData;
   }
 
   getItemsFromLocalStorage() {
     return this.localStorageService.getItemsFromLocalStorage();
-    // const savedData = JSON.parse(localStorage.getItem(this.key));
-    // return savedData;
   }
 
-  addTip(){
+  addTip() {
     this.editMode = true;
     console.log('from addTip');
   }

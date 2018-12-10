@@ -23,14 +23,9 @@ export class PartyInputComponent implements OnInit {
     tipAmount: null
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private toastService: ToastService) { 
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private toastService: ToastService) {
     this.localStorageService = new LocalStorageService('userdatas');
   }
-
-  // goToPage(path: string) {
-  //   console.log('from goToPage path: ',path);
-  //   this.router.navigate([path]);
-  // }
 
   async ngOnInit() {
     this.activatedRoute.params.subscribe((data: IUserData) => {
@@ -54,20 +49,15 @@ export class PartyInputComponent implements OnInit {
   }
 
   previousStep(user: IUserData, path: string) {
-    //  this.localStorageService.saveItemsToLocalStorage(user);
-     this.router.navigate(['bill-total',user]);
+    this.router.navigate(['bill-total', user]);
   }
 
   saveItemsToLocalStorage(userdatas: Array<UserData>) {
     return this.localStorageService.saveItemsToLocalStorage(userdatas);
-    // const savedData = localStorage.setItem(this.key, JSON.stringify(userdatas));
-    // return savedData;
   }
 
   getItemsFromLocalStorage() {
     return this.localStorageService.getItemsFromLocalStorage();
-    // const savedData = JSON.parse(localStorage.getItem(this.key));
-    // return savedData;
   }
 
 

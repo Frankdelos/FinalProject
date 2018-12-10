@@ -27,11 +27,6 @@ export class ResultsPageComponent implements OnInit {
     this.localStorageService = new LocalStorageService('userdatas');
   }
 
-  // goToPage(path: string) {
-  //   console.log('from goToPage path: ',path);
-  //   this.router.navigate([path]);
-  // }
-
   async ngOnInit() {
     this.activatedRoute.params.subscribe((data: IUserData) => {
       console.log("data being transfered: ", data);
@@ -52,14 +47,10 @@ export class ResultsPageComponent implements OnInit {
 
   saveItemsToLocalStorage(userdatas: Array<UserData>) {
     return this.localStorageService.saveItemsToLocalStorage(userdatas);
-    // const savedData = localStorage.setItem(this.key, JSON.stringify(userdatas));
-    // return savedData;
   }
 
   getItemsFromLocalStorage() {
     return this.localStorageService.getItemsFromLocalStorage();
-    // const savedData = JSON.parse(localStorage.getItem(this.key));
-    // return savedData;
   }
 
   calculateBillSplit (){
