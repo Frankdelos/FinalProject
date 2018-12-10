@@ -1,2 +1,16 @@
 
+.column-left{
+    background-color: #01579B;
+    color: white;
+    width: 33vw;
+    padding: 10px;
+    height: 100vh;
+}
 
+.column-right {
+    color: white;
+    background-color: #81D4FA;
+    width: 66vw;
+    padding: 10px;
+    height: 100vh;
+  }

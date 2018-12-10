@@ -43,7 +43,7 @@ table{
 .column-left {
   background-color: #01579B;
   color: white;
-  width: 50vw;
+  width: 33vw;
   padding: 10px;
   height: 100vh;
 }
@@ -51,7 +51,7 @@ table{
 .column-right {
   color: white;
   background-color: #81D4FA;
-  width: 50vw;
+  width: 66vw;
   padding: 10px;
   height: 100vh;
 }
@@ -86,6 +86,11 @@ table{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.percentClass {
+  font-size: 26pt;
+  text-shadow: 2px 2.5px black;
+}
+
 
 .summaryClass{
   font-size: 26pt;
@@ -95,11 +100,14 @@ table{
 }
 
 .stepClass {
+  margin-top: 20px;
   font-size: 48pt;
   text-shadow: 2px 2.5px black;
 }
 
 .headDescription{
+  margin-top: 20px;
+  margin-bottom: 30px;
   font-size: 3em;
   text-decoration: underline;
   text-shadow: 2px 2.5px black;
@@ -110,4 +118,23 @@ table{
   font-size: 1.75em;
   text-shadow: 2px 2.5px black;
 
+}
+
+.russianStepClass{
+  margin-top: 20px;
+  font-size: 48pt;
+  text-shadow: 2px 2.5px rgb(145, 144, 144);
+}
+
+.russianSummaryClass{
+  font-size: 26pt;
+  text-shadow: 2px 2.5px rgb(145, 144, 144);
+  margin-top: 50px;
+
+}
+
+
+.russianPercentClass{
+  font-size: 20pt;
+  text-shadow: 1.5px 1.25px rgb(145, 144, 144);
 }
