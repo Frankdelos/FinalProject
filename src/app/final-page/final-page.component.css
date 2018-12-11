@@ -40,3 +40,17 @@
     font-size: 4em;
     text-shadow: 1.5px 1.25px rgb(0, 0, 0);
   }
+
+  .spacer{
+    padding:10px;
+    position: relative;
+    bottom: 0px;  
+}
+.headDescription-1 {
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 50px;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+}

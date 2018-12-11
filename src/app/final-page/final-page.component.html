@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <i class="material-icons">keyboard_backspace</i>
+<nav class=" navbar-expand-lg navbar-light bg-light">
+  <i class="material-icons spacer">keyboard_backspace</i>
   <a class="navbar-brand font" href="#">Return to homepage</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
     aria-expanded="false" aria-label="Toggle navigation">
@@ -14,21 +14,21 @@
 
   <div class="center-text column-left-1 font">
     <h2 class="headDescription">Process Description</h2>
-    <div class="text-grid font descriptionClass">Click the button to reveal who has to pay the bill! The choice is
+    <div class="text-grid font ">Click the button to reveal who has to pay the bill! The choice is
       determined before you press the button, so whomever got picked is the chosen one. Hope you enjoyed and had fun!
     </div>
   </div>
 
   <div class="center-text column-right-1 font">
     <div>
-      <h2 class = "russianStepClass">The lucky winner is...</h2>
+      <h2 class = "headDescription">The lucky winner is...</h2>
       <div class="russianName">{{randomWinner.russianWinner}}</div>
 
 
       <button type="button" class="btn btn-primary " (click)="randTest(user)">Reveal Person</button>
 
       <div class="center-text results-column-right font">
-        <h2 class="russianStepClass">Your bill summary</h2>
+        <h2 class="headDescription-1">Your bill summary</h2>
         <div class="container">
           <div class="align-text font ">
             <div class="russianFinalSummaryClass">Bill: ${{currentUser.mealCost}}</div>
@@ -38,19 +38,13 @@
         </div>
 
 
-
-
-  
-
-
-
         <div>
-          <button type="button" class="btn btn-secondary btn-format" (click)="nextStep(user)">
+          <button type="button" class="btn btn-light btn-format" (click)="nextStep(user)">
             <i class="material-icons">
               chevron_right
             </i>
           </button>
-          <button type="button" class="btn btn-secondary btn-format" (click)="previousStep(user)">
+          <button type="button" class="btn btn-light btn-format" (click)="previousStep(user)">
             <i class="material-icons">
               chevron_left
             </i>

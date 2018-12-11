@@ -21,7 +21,8 @@ export class TipInputComponent implements OnInit {
   user: IUserData = {
     mealCost: null,
     amountInParty: null,
-    tipAmount: null
+    tipAmount: null,
+    customTip: null
   };
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private toastService: ToastService) {
@@ -67,6 +68,8 @@ export class TipInputComponent implements OnInit {
     this.editMode = true;
     console.log('from addTip');
   }
-
+  setEditMode(){
+    this.editMode = false;
+  }
 
 }

@@ -1,9 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <i class="material-icons">keyboard_backspace</i>
+<nav class=" navbar-expand-lg navbar-light bg-light">
+  <i class="material-icons spacer">keyboard_backspace</i>
   <a class="navbar-brand font" href="#">Return to homepage</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
     aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <!-- <span class="navbar-toggler-icon"></span> -->
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
@@ -11,28 +11,31 @@
   </div>
 </nav>
 <div class="split-grid">
-
-  <div class="center-text column-left">
+  <div class="center-text column-left font">
     <h2 class="headDescription">Process Description</h2>
-    <div class="text-grid font descriptionClass">Welcome to the first step! If you choose to read these instructions, we'll make things easy
+    <div class="text-grid font">Welcome to the first step! If you choose to read these instructions, we'll make things
+      easy
       to follow! Here, all you need to do is enter the total cost of the meal and
       hit that next button!</div>
   </div>
 
   <div class="center-text column-right font">
     <div>
-      <h2 class="stepClass">Step 1 of 4: What's the total bill?</h2>
-      <div class="summaryClass">Enter the total amount of the bill</div>
+      <div class="headDescription">Step 1 of 4:
+        <span class="subHeader">What's the total bill?</span>
+      </div>
+
       <div class="align-center">
-        <input [(ngModel)]="user.mealCost" type="text" class="form-control box-size font" placeholder="Enter Total Meal Cost"
+        <input [(ngModel)]="user.mealCost" type="text" class="form-control box-size placeholderText" placeholder="$ Enter Total Meal Cost"
           aria-describedby="basic-addon2">
 
-        <button type="button" class="btn btn-secondary btn-format" (click)="nextStep(user)">
+        
+        <button type="button" class="btn btn-light btn-format" (click)="nextStep(user)">
           <i class="material-icons">
             chevron_right
           </i>
         </button>
-        <button type="button" class="btn btn-secondary btn-format" (click)="previousStep(user)">
+        <button type="button" class="btn btn-light btn-format" (click)="previousStep(user)">
           <i class="material-icons">
             chevron_left
           </i>

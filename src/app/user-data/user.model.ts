@@ -3,6 +3,7 @@ export interface IUserData {
     amountInParty?: number;
     tipAmount?: number;
     userNames?: string;
+    customTip?: string;
 }
 
 export class UserData {
