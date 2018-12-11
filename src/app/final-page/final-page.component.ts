@@ -54,8 +54,10 @@ export class FinalPageComponent implements OnInit {
 
   randTest(){
     console.log('random number is: ', this.rand);
-    this.randomWinner.russianWinner = JSON.stringify(this.users[this.rand]);
-    console.log(this.users[this.rand]);
+
+    this.randomWinner.russianWinner = this.users[this.rand].userNames;
+    //console.log(this.users[this.rand]);
+
     return this.randomWinner.russianWinner;
     
   }
