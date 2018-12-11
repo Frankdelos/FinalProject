@@ -93,7 +93,7 @@ export class RussianPageComponent implements OnInit {
     const user: IUserData = {
       userNames: null
     };
-    this.users.push(user);
+    this.users.unshift(user);
     this.saveToLocalStorage('userdatas', this.users);
   }
 
