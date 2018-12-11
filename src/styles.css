@@ -28,6 +28,7 @@ table-layout: fixed;
 
 .center-text {
   text-align: center;
+  overflow: auto;
   
 }
 

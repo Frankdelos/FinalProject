@@ -10,6 +10,7 @@
 
 <div class="results-split-grid">
   <div class="center-text results-column-left font">
+    <img src="icons8-bill-100.png">
     <h2 class="headDescription">Process Description</h2>
     <div class="text-grid font descriptionClass">
       This results page breaks down how
@@ -22,11 +23,31 @@
     <h2 class="headDescription">YOUR BILL SUMMARY</h2>
     <div class="container">
       <div class="align-text font-2 ">
-        <div class="results-subHeader">Bill: ${{user.mealCost}}</div>
-        <div class="results-subHeader">People: {{user.amountInParty}}</div>
-        <div class="results-subHeader">Tip: {{user.tipAmount}}% (${{convertTipToDecimal()}})</div>
-        <div class="results-subHeader">Total: ${{calculateTotalWithTip()}}</div>
-        <div class="results-subHeader">Each: ${{calculateBillSplit()}}</div>
+        <div class="results-subHeader">Bill: ${{user.mealCost}}
+          <span>
+              <img src="icons8-stack-of-money-filled-64.png" width="64px" height="64px">
+          </span>
+        </div>
+        <div class="results-subHeader">People: {{user.amountInParty}}
+            <span>
+                <img src="icons8-people-filled-64.png" width="64px" height="64px">
+              </span>
+        </div>
+        <div class="results-subHeader">Tip: {{user.tipAmount}}% (${{convertTipToDecimal()}})
+            <span>
+                <img src="icons8-donate-100.png" width="64px" height="64px">
+              </span>
+        </div>
+        <div class="results-subHeader">Total: ${{calculateTotalWithTip()}}
+            <span>
+                <img src="icons8-check-100.png" width="64px" height="64px">
+              </span>
+        </div>
+        <div class="results-subHeader">Each: ${{calculateBillSplit()}}
+            <span>
+                <img src="icons8-us-dollar-100.png" width="64px" height="64px">
+            </span>
+        </div>
       </div> <div class="align-text">
       <button type="button" class="btn btn-light font btn-format-home" (click)="goToPage('')">Return Home</button>
     </div>
