@@ -1,17 +1,23 @@
 
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,700,900,500,400,300,200');
+
   
+
+
 .nav-button{
-    margin-right: 8px !important;
+  margin-right: 8px !important;
 }
 
 
 table{
-  table-layout: fixed; 
+table-layout: fixed; 
 }
 
+
+
 .align-center{
-  margin: 15px;
+  margin: auto;
   border: 1px;
 }
 
@@ -26,23 +32,26 @@ table{
 }
 
 .box-size{
-  height: 100px;
+  height: 85px;
   padding: 10px;
   border: 1px solid rgb(7, 7, 7);
   box-sizing: border-box;
   font-size: 28px;
   text-align: center;
   margin-top: 30px;
+  width: 400px;
+  margin: auto;
 }
 
 .text-grid {
   text-align: center;
   height: 25vh;
+  margin-left: 10px;
 }
 
 .column-left {
   background-color: #01579B;
-  color: white;
+  /* background: linear-gradient(to bottom left, #0066cc 0%, #99ccff 100%); */
   width: 33vw;
   padding: 10px;
   height: 100vh;
@@ -58,7 +67,7 @@ table{
 .column-left-1 {
   background-color: #B71C1C;
   color: white;
-  width: 50vw;
+  width: 33vw;
   padding: 10px;
   height: 100vh;
 }
@@ -66,13 +75,14 @@ table{
 .column-right-1 {
   color: black;
   background-color: #FDD835;
-  width: 50vw;
+  width: 66vw;
   padding: 10px;
   height: 100vh;
 }
 .split-grid {
  display: grid;
  grid-template-columns: 1fr 3fr;
+ 
 }
 
 .toast-container {
@@ -83,7 +93,10 @@ table{
   margin-top: 50px;
 }
 .font{
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+  margin-top: 20px;
+  font-family: 'Roboto', sans-serif;
+  color: white;
 }
 
 .percentClass {
@@ -99,26 +112,42 @@ table{
 
 }
 
-.stepClass {
-  margin-top: 20px;
-  font-size: 48pt;
-  text-shadow: 2px 2.5px black;
-}
+
 
 .headDescription{
   margin-top: 20px;
   margin-bottom: 30px;
-  font-size: 3em;
-  text-decoration: underline;
-  text-shadow: 2px 2.5px black;
+  font-size: 50px;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+
 
 }
 
-.descriptionClass{
-  font-size: 1.75em;
-  text-shadow: 2px 2.5px black;
+.subHeader {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 50px;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
 
 }
+
+.subHeader-2 {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 200;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.placeholderText {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+
+}
+
 
 .russianStepClass{
   margin-top: 20px;

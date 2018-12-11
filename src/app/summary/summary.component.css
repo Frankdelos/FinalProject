@@ -10,12 +10,7 @@
     text-shadow: 2px 2.5px black;
 }
 
-.headDescription{
-    font-size: 3em;
-    text-decoration: underline;
-    text-shadow: 2px 2.5px black;
 
-}
 
 .descriptionClass{
     font-size: 1.75em;
@@ -45,4 +40,9 @@
     width: 66vw;
     padding: 10px;
     height: 100vh;
+}
+.spacer{
+    padding:10px;
+    position: relative;
+    bottom: 0px;  
 }

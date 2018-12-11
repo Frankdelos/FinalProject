@@ -105,6 +105,9 @@ export class RussianPageComponent implements OnInit {
   addTip() {
     this.editMode = true;
   }
+  setEditMode(){
+    this.editMode = false;
+  }
 
 
 }

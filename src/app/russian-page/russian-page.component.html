@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <i class="material-icons">keyboard_backspace</i>
+<nav class=" navbar-expand-lg navbar-light bg-light">
+  <i class="material-icons spacer">keyboard_backspace</i>
   <a class="navbar-brand font" href="#">Return to homepage</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
     aria-expanded="false" aria-label="Toggle navigation">
@@ -14,7 +14,7 @@
 
   <div class="center-text column-left-1 font">
     <h2 class="headDescription">Process Description</h2>
-    <div class="text-grid font descriptionClass">Welcome to the Russian Roulette Page! If you chose this page,
+    <div class="text-grid font ">Welcome to the Russian Roulette Page! If you chose this page,
       it's because you want some fun. The rules are simple: input your bill total, how much you want to tip,
       your friend's or family's name, then WE will randomly choose who will pay for it all.
     </div>
@@ -22,9 +22,9 @@
 
   <div class="center-text column-right-1 font">
     <div>
-      <h2 class="russianStepClass">Russian Roulette</h2>
+      <h2 class="headDescription">Russian Roulette</h2>
       <!-- BILL INPUT -->
-      <h4 class="russianSummaryClass">Total Bill:</h4>
+      <h4 class="subHeader">Total Bill:</h4>
       <div class="input-group mb-3 russian-input">
         <div class="input-group-prepend">
           <span class="input-group-text">$</span>
@@ -34,50 +34,57 @@
 
       <!-- TIP INPUT -->
       <div class="align-center">
-        <h4 class="russianSummaryClass">Tip Amount:</h4>
-        <div class="form-check form-check-inline">
-          <input [(ngModel)]="users.tipAmount" class="form-check-input font" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="10">
-          <label class="form-check-label russianPercentClass" for="inlineRadio1">10%</label>
+        <h4 class="subHeader">Tip Amount:</h4>
+        <div class="align-center">
+          <div class="form-check form-check-inline">
+            <input [(ngModel)]="users.tipAmount" class="form-check-input placeholderText" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                value="10" (click)="setEditMode()">
+            <label class="form-check-label" for="inlineRadio1">10%</label>
         </div>
-        <div class="form-check form-check-inline font">
-          <input [(ngModel)]="users.tipAmount" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-            value="15">
-          <label class="form-check-label russianPercentClass" for="inlineRadio2">15%</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input [(ngModel)]="users.tipAmount" class="form-check-input font" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-            value="20">
-          <label class="form-check-label russianPercentClass" for="inlineRadio3">20%</label>
+        <div class="form-check form-check-inline ">
+            <input [(ngModel)]="users.tipAmount" class="form-check-input placeholderText" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                value="15" (click)="setEditMode()">
+            <label class="form-check-label" for="inlineRadio2">15%</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input font" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="users.tipAmount"
-            (click)="addTip()">
-          <label class="form-check-label russianPercentClass">Custom tip</label>
-          <div *ngIf="editMode == true">
-            <input [(ngModel)]="users.tipAmount" type="text" class="form-control text-box font" placeholder="">
-          </div>
+            <input [(ngModel)]="users.tipAmount" class="form-check-input placeholderText" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                value="20" (click)="setEditMode()">
+            <label class="form-check-label" for="inlineRadio3">20%</label>
         </div>
-
-        <h4 class="russianSummaryClass">People in Party:</h4>
-        <div class="input-group russian-input2">
-          <div>
-            <button type="button" class="btn btn-success btn-format-home font btn-group" (click)="addPerson()">Add</button>
-            <button type="button" class="btn btn-danger btn-format-home font btn-group" (click)="deletePerson()">Delete</button>
-            <div class="input-group" *ngFor="let user of users; let i = index">
-              <input [(ngModel)]="user.userNames" type="text" class="form-control" placeholder="Party Names" aria-label="Recipient's username"
-                aria-describedby="basic-addon2">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input placeholderText" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="user.tipAmount"
+                (click)="addTip()">
+            <label class="form-check-label">Custom tip</label>
+            <div *ngIf="editMode != false">
+                <input [(ngModel)]="users.tipAmount" type="text" class="form-control text-box placeholderText" placeholder="">
             </div>
-
           </div>
 
+          <!-- PARTY INPUT -->
+          <h4 class="subHeader">People in Party:</h4>
+          <div class="input-group russian-input2">
+            <div>
+              <button type="button" class="btn btn-success btn-format-home font btn-group" (click)="addPerson()">Add</button>
+              <button type="button" class="btn btn-danger btn-format-home font btn-group" (click)="deletePerson()">Delete</button>
+              <div class="input-group" *ngFor="let user of users; let i = index">
+                <input [(ngModel)]="user.userNames" type="text" class="form-control" placeholder="Party Names" aria-label="Recipient's username"
+                  aria-describedby="basic-addon2">
+              </div>
+  
+            </div>
+  
+          </div>
+        
+
+
+
         </div>
-        <button type="button" class="btn btn-secondary btn-format" (click)="nextStep(users)">
+        <button type="button" class="btn btn-light btn-format" (click)="nextStep(users)">
           <i class="material-icons">
             chevron_right
           </i>
         </button>
-        <button type="button" class="btn btn-secondary btn-format" (click)="previousStep(users)">
+        <button type="button" class="btn btn-light btn-format" (click)="previousStep(users)">
           <i class="material-icons">
             chevron_left
           </i>

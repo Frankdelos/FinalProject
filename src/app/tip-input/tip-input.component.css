@@ -32,3 +32,9 @@
     margin-bottom: 50px;
   
   }
+
+  .spacer{
+    padding:10px;
+    position: relative;
+    bottom: 0px;  
+}

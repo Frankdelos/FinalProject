@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <i class="material-icons">keyboard_backspace</i>
+<nav class="navbar-expand-lg navbar-light bg-light">
+    <i class="material-icons spacer">keyboard_backspace</i>
     <a class="navbar-brand font" href="#">Return to homepage</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -14,49 +14,50 @@
 <div class="split-grid">
     <div class="center-text column-left font">
         <h2 class="headDescription">Process Description:</h2>
-        <div class="text-grid font descriptionClass">Ahh, the tipping page.. You have the power to show your love to your server by providing
+        <div class="text-grid font">Ahh, the tipping page.. You have the power to show your love to your server by providing
             a nice tip here. However, you also have the power to tip low in order to show your server that they need to
             step their game up. All in all, please respect servers, and we hope you utilize tipping in a friendly and
             positive manner. </div>
     </div>
 
     <div class="center-text column-right font">
-        <h2 class="stepClass">Step 3 of 4: How much do you want to tip?</h2>
-        <div class="summaryClass">Select desired tip amount</div>
+        <div class="headDescription">Step 3 of 4: 
+            <span class="subHeader">How much do you want to tip?</span>
+        </div>
         <div class="align-center">
             <div class="form-check form-check-inline">
-                <input [(ngModel)]="user.tipAmount" class="form-check-input font" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                    value="10">
-                <label class="form-check-label percentClass" for="inlineRadio1">10%</label>
+                <input [(ngModel)]="user.tipAmount" class="form-check-input placeholderText" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                    value="10" (click)="setEditMode()">
+                <label class="form-check-label" for="inlineRadio1">10%</label>
             </div>
             <div class="form-check form-check-inline font">
-                <input [(ngModel)]="user.tipAmount" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                    value="15">
-                <label class="form-check-label percentClass" for="inlineRadio2">15%</label>
+                <input [(ngModel)]="user.tipAmount" class="form-check-input placeholderText" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                    value="15" (click)="setEditMode()">
+                <label class="form-check-label" for="inlineRadio2">15%</label>
             </div>
             <div class="form-check form-check-inline">
-                <input [(ngModel)]="user.tipAmount" class="form-check-input font" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-                    value="20">
-                <label class="form-check-label percentClass" for="inlineRadio3">20%</label>
+                <input [(ngModel)]="user.tipAmount" class="form-check-input placeholderText" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                    value="20" (click)="setEditMode()">
+                <label class="form-check-label" for="inlineRadio3">20%</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input font" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="user.tipAmount"
+                <input class="form-check-input placeholderText" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="user.tipAmount"
                     (click)="addTip()">
-                <label class="form-check-label percentClass">Custom tip</label>
-                <div *ngIf="editMode == true">
-                    <input [(ngModel)]="user.tipAmount" type="text" class="form-control text-box font" placeholder="">
+                <label class="form-check-label">Custom tip</label>
+                <div *ngIf="editMode != false">
+                    <input [(ngModel)]="user.tipAmount" type="text" class="form-control text-box placeholderText" placeholder="">
                 </div>
 
 
 
             </div>
         </div>
-        <button type="button" class="btn btn-secondary btn-format" (click)="nextStep(user)">
+        <button type="button" class="btn btn-light btn-format" (click)="nextStep(user)">
             <i class="material-icons">
                 chevron_right
             </i>
         </button>
-        <button type="button" class="btn btn-secondary btn-format" (click)="previousStep(user)">
+        <button type="button" class="btn btn-light btn-format" (click)="previousStep(user)">
             <i class="material-icons">
                 chevron_left
             </i>

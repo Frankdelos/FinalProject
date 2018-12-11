@@ -3,7 +3,9 @@
     color: white;
     width: 30vw;
     padding: 10px;
-    height: 100vh;
+    height: 100%;
+    overflow: hidden;
+   
   }
       
   .results-column-right {
@@ -11,11 +13,15 @@
     background-color: #81D4FA;
     width: 70vw;
     padding: 10px;
-    height: 100vh;
+    height: 100%;
+    overflow: auto;
+  
   }
   .results-split-grid {
    display: grid;
    grid-template-columns: 1fr 3fr;
+   height: 50%;
+   width: 50%;
   }
   .results-header{
       align-content: left;
@@ -31,10 +37,12 @@
 
   .container{
     display: grid;
-    grid-template-rows: 200px 100px;
+    grid-template-rows: 100px 100px;
     width: 200px;
     position: relative;
-    top: 30px;
+    height: 100%;
+ 
+ 
   }
 
   .btn-format-2 {
@@ -42,6 +50,9 @@
     margin-top: 150px;
     float: center;
     
+  }
+  .header{
+    overflow: hidden;
   }
 
   .percentClass {

@@ -19,7 +19,8 @@ export class SummaryComponent implements OnInit {
   user: IUserData = {
     mealCost: null,
     amountInParty: null,
-    tipAmount: null
+    tipAmount: null,
+    customTip: null
   };
 
 
@@ -34,7 +35,11 @@ export class SummaryComponent implements OnInit {
       this.currentUser = data;
       this.user.mealCost = this.currentUser.mealCost;
       this.user.amountInParty = this.currentUser.amountInParty;
+      this.user.customTip = this.currentUser.customTip;
       this.user.tipAmount = this.currentUser.tipAmount;
+
+
+
     });
   }
 
@@ -44,8 +49,8 @@ export class SummaryComponent implements OnInit {
   }
 
   previousStep(user: IUserData, path: string) {
-     this.router.navigate(['tip-input',user]);
+    this.router.navigate(['tip-input', user]);
   }
-  
+
 
 }
