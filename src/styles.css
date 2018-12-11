@@ -50,8 +50,8 @@ table-layout: fixed;
 }
 
 .column-left {
-  background-color: #01579B;
-  /* background: linear-gradient(to bottom left, #0066cc 0%, #99ccff 100%); */
+  /* background-color: #01579B; */
+  background: linear-gradient(to bottom left, #0D47A1 0%, #757575 112%);
   width: 33vw;
   padding: 10px;
   height: 100vh;
@@ -59,7 +59,8 @@ table-layout: fixed;
     
 .column-right {
   color: white;
-  background-color: #81D4FA;
+  /* background-color: #81D4FA; */
+  background: linear-gradient(to bottom left, #00ccff 0%, #6699ff 100%);
   width: 66vw;
   padding: 10px;
   height: 100vh;
