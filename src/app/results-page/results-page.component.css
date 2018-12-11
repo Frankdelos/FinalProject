@@ -23,8 +23,10 @@
 
   .align-text{
   text-align: left; 
-  border: dashed; 
+  /* border: dashed;  */
   border-color: black;
+  width: 20vw;
+ 
 }
 
   .container{
@@ -37,5 +39,14 @@
 
   .btn-format-2 {
     margin: 40px;
+    margin-top: 150px;
     float: center;
+    
   }
+
+  .percentClass {
+    font-size: 30pt;
+    text-shadow: 2px 2.5px black;
+    margin-bottom: 15px;
+  }
+  

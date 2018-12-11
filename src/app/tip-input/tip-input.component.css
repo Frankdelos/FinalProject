@@ -24,3 +24,11 @@
     padding: 10px;
     height: 100vh;
 }
+
+.summaryClass{
+    font-size: 38pt;
+    text-shadow: 2px 2.5px black;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  
+  }
