@@ -44,7 +44,7 @@ export class TipInputComponent implements OnInit {
       this.toastService.showToast('warning', 'Please input a tip!', 4000);
     } else {
       if (user.tipAmount == 0) {
-        this.toastService.showToast('warning', 'Please input a party amount above 0!', 4000);
+        this.toastService.showToast('warning', 'Please input a tip amount above 0!', 4000);
       } else {
         this.localStorageService.saveItemsToLocalStorage(user);
         this.router.navigate(['summary', user]);
