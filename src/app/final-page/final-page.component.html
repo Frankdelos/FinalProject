@@ -13,10 +13,9 @@
 <div class="split-grid">
 
   <div class="center-text column-left-1 font">
-    <h2>Process Description</h2>
-    <div class="text-grid font">Welcome to the Russian Roulette Page! If you chose this page,
-      it's because you want some fun. The rules are simple: input your bill total, how much you want to tip,
-      your friend's or family's name, then WE will randomly choose who will pay for it all.
+    <h2 class="headDescription">Process Description</h2>
+    <div class="text-grid font descriptionClass">Click the button to reveal who has to pay the bill! The choice is
+      determined before you press the button, so whomever got picked is the chosen one. Hope you enjoyed and had fun!
     </div>
   </div>
 
@@ -25,22 +24,37 @@
       <h2>The lucky winner is...</h2>
       <div>{{randomWinner.russianWinner}}</div>
 
-     
 
       <button type="button" class="btn btn-primary " (click)="randTest(user)">Reveal Person</button>
 
-      
-      <div>
-        <button type="button" class="btn btn-secondary btn-format" (click)="nextStep(user)">
-          <i class="material-icons">
-            chevron_right
-          </i>
-        </button>
-        <button type="button" class="btn btn-secondary btn-format" (click)="previousStep(user)">
-          <i class="material-icons">
-            chevron_left
-          </i>
-        </button>
+      <div class="center-text results-column-right font">
+        <h2 class="stepClass">Your bill summary</h2>
+        <div class="container">
+          <div class="align-text font ">
+            <div class="percentClass">Bill: ${{currentUser.mealCost}}</div>
+            <div class="percentClass">Tip: {{currentUser.tipAmount}}% (${{convertTipToDecimal()}})</div>
+            <div class="percentClass">Total: ${{calculateTotalWithTip()}}</div>
+          </div>
+        </div>
+
+
+
+
+  
+
+
+
+        <div>
+          <button type="button" class="btn btn-secondary btn-format" (click)="nextStep(user)">
+            <i class="material-icons">
+              chevron_right
+            </i>
+          </button>
+          <button type="button" class="btn btn-secondary btn-format" (click)="previousStep(user)">
+            <i class="material-icons">
+              chevron_left
+            </i>
+          </button>
+        </div>
       </div>
     </div>
-  </div>

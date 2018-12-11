@@ -14,14 +14,16 @@ import { RussianData } from '../user-data/user.model';
 })
 export class FinalPageComponent implements OnInit {
 
-  randomWinner: RussianData;
+  randomWinner: RussianData = {
+    russianWinner: null
+  };
   userParams = '';
   rand: number;
   currentUser: IUserData;
   users: Array<UserData> = [];
 
-  
-    
+
+
   localStorageService: LocalStorageService<UserData>;
 
 
@@ -35,7 +37,7 @@ export class FinalPageComponent implements OnInit {
       this.currentUser = data;
       this.users = this.localStorageService.getItemsFromLocalStorage();
       this.rand = Math.floor(Math.random() * this.users.length);
-      console.log("Newest random number --> ", this.rand);
+      console.log("Random number --> ", this.rand);
     });
   }
 
@@ -50,13 +52,27 @@ export class FinalPageComponent implements OnInit {
   }
 
 
-  randTest(){
+  randTest() {
     console.log('random number is: ', this.rand);
-    this.randomWinner = this.users[this.rand];
-    console.log(this.users[this.rand]);
-    
+
+    this.randomWinner.russianWinner = this.users[this.rand].userNames;
+    //console.log(this.users[this.rand]);
+
+    return this.randomWinner.russianWinner;
   }
 
+
+  convertTipToDecimal(){
+    const adjustedTip = this.currentUser.tipAmount / 100;
+    const tipAmount = this.currentUser.mealCost * adjustedTip;
+    return tipAmount.toFixed(2);
+  }
+
+  calculateTotalWithTip(){
+    const totalWithTip = (this.currentUser.mealCost*1) + (this.currentUser.mealCost*(this.currentUser.tipAmount/100));
+    return totalWithTip.toFixed(2);
+
+  }
 
 
 }
