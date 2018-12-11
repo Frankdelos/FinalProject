@@ -25,11 +25,11 @@ export class BillTotalComponent implements OnInit {
 
   nextStep(user: IUserData, path: string) {
     if (user.mealCost === null) {
-      this.toastService.showToast('warning', 'Please input a party amount!', 4000);
+      this.toastService.showToast('warning', 'Please input a bill amount!', 4000);
     } else if (isNaN(user.mealCost)) {
       this.toastService.showToast('warning', 'Please input numbers only!', 4000);
     } else if (user.mealCost == 0) {
-      this.toastService.showToast('warning', 'Please input a party amount above 0!', 4000);
+      this.toastService.showToast('warning', 'Please input a bill amount above 0!', 4000);
     } else {
       this.localStorageService.saveItemsToLocalStorage(user);
       this.router.navigate(['party-input', user]);
