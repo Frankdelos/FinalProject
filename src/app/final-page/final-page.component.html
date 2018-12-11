@@ -21,27 +21,26 @@
 
   <div class="center-text column-right-1 font">
     <div>
-      <h2>The lucky winner is...</h2>
-      <div>{{randomWinner.russianWinner}}</div>
+      <h2 class = "russianStepClass">The lucky winner is...</h2>
+      <div class="russianName">{{randomWinner.russianWinner}}</div>
 
 
+      <button type="button" class="btn btn-primary " (click)="randTest(user)">Reveal Person</button>
 
       <div class="center-text results-column-right font">
-        <h2 class="stepClass">Your bill summary</h2>
+        <h2 class="russianStepClass">Your bill summary</h2>
         <div class="container">
           <div class="align-text font ">
-            <div class="percentClass">Bill: ${{currentUser.mealCost}}</div>
-            <div class="percentClass">Tip: {{currentUser.tipAmount}}% (${{convertTipToDecimal()}})</div>
-            <div class="percentClass">Total: ${{calculateTotalWithTip()}}</div>
+            <div class="russianFinalSummaryClass">Bill: ${{currentUser.mealCost}}</div>
+            <div class="russianFinalSummaryClass">Tip: {{currentUser.tipAmount}}% (${{convertTipToDecimal()}})</div>
+            <div class="russianFinalSummaryClass">Total: ${{calculateTotalWithTip()}}</div>
           </div>
         </div>
 
 
 
 
-        <button type="button" class="btn btn-secondary btn-format" (click)="randTest(user)">
-          <i class="material-icons">chevron_right</i>
-        </button>
+  
 
 
 

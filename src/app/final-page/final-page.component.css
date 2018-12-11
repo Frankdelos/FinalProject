@@ -13,3 +13,30 @@
     padding: 10px;
     height: 100vh;
   }
+
+  .russianStepClass{
+    margin-top: 20px;
+    font-size: 48pt;
+    text-shadow: 2px 2.5px rgb(145, 144, 144);
+  }
+  
+  .russianSummaryClass{
+    font-size: 26pt;
+    text-shadow: 2px 2.5px rgb(145, 144, 144);
+    margin-top: 50px;
+  
+  }
+  
+  
+  .russianFinalSummaryClass{
+    color: #B71C1C;
+    font-size: 3em;
+    text-shadow: 1.3px 2px rgb(0, 0, 0);
+    font-weight: bold;
+  }
+
+  .russianName {
+    color: #B71C1C;
+    font-size: 4em;
+    text-shadow: 1.5px 1.25px rgb(0, 0, 0);
+  }
