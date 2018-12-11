@@ -13,6 +13,7 @@
 <div class="split-grid">
 
   <div class="center-text column-left-1 font">
+    <img src="icons8-hunt-filled-100.png">
     <h2 class="headDescription">Process Description</h2>
     <div class="text-grid font ">Click the button to reveal who has to pay the bill! The choice is
       determined before you press the button, so whomever got picked is the chosen one. Hope you enjoyed and had fun!
@@ -22,13 +23,14 @@
   <div class="center-text column-right-1 font">
     <div>
       <h2 class = "headDescription">The lucky winner is...</h2>
-      <div class="russianName">{{randomWinner.russianWinner}}</div>
+      <div class="russianName">{{randomWinner.russianWinner}}
+      </div>
 
 
       <button type="button" class="btn btn-primary " (click)="randTest(user)">Reveal Person</button>
 
       <div class="center-text results-column-right font">
-        <h2 class="headDescription-1">Your bill summary</h2>
+        <h2 class="headDescription-1">YOUR BILL SUMMARY</h2>
         <div class="container">
           <div class="align-text font ">
             <div class="russianFinalSummaryClass">Bill: ${{currentUser.mealCost}}</div>
